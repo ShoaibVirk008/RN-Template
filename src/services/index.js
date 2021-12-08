@@ -4,7 +4,7 @@
 // export {fontFamily,fontSize} from './utilities/fonts'
 // export { appStyles} from './utilities/appStyles'
 import Validations from './validations'
-import HelpingMethods from './helpingMethods'
+import * as HelpingMethods from './helpingMethods'
 export * from './utilities'
 export * from './constants'
 export * from './api'
