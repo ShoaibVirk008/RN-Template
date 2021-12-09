@@ -74,6 +74,26 @@ export const Absolute = ({ children, style, animation }) => {
         </Animatable.View>
     );
 }
+export const ColoredWrapper = ({ style, children, ...props }) => {
+    return (
+        <TouchableOpacity
+            style={[appStyles.coloredWrapper, style]}
+            {...props}
+        >
+            {children}
+        </TouchableOpacity>
+    )
+}
+export const BorderedWrapper = ({ style, children, ...props }) => {
+    return (
+        <Animatable.View
+            style={[appStyles.borderedWrapper, style]}
+            {...props}
+        >
+            {children}
+        </Animatable.View>
+    )
+}
 
 
 const styles = StyleSheet.create({
