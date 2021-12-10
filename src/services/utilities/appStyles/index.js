@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { totalSize, height, width } from 'react-native-dimension'
+import { sizes } from '..'
 import  {colors}  from '../colors'
 import { fontFamily,fontSize } from '../fonts'
 
@@ -290,4 +291,50 @@ export const appStyles= StyleSheet.create({
       color: '#000000',
       fontFamily: fontFamily.appTextMedium
     },
+    tabBarStyle: {
+      height: sizes.tabBarHeight,
+      borderTopWidth: 0,
+      //justifyContent: 'center',
+      // borderTopLeftRadius: sizes.cardRadius,
+      //borderTopRightRadius: sizes.cardRadius,
+      // paddingTop: height(1),
+      //borderRadius: sizes.buttonRadius,
+      backgroundColor: colors.appBgColor1,
+      //paddingVertical:sizes.tabBarHeight/5,
+      //position: 'absolute',
+      //left: 0,
+      //right: 0,
+      //bottom: 0,
+      //marginHorizontal: sizes.marginHorizontal,
+      //marginBottom: Platform.OS === 'ios' ? height(2.5) : height(1.5),
+      //paddingTop: sizes.tabBarHeight / 7,
+      paddingBottom: sizes.tabBarHeight / 4,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 5,
+      },
+      shadowOpacity: 0.425,
+      shadowRadius: 8.27,
+  
+      elevation: 10,
+    },
+    coloredWrapper: {
+      marginHorizontal: sizes.marginHorizontal,
+      paddingHorizontal: sizes.marginHorizontal / 1.25,
+      paddingVertical: sizes.marginVertical / 1.5,
+      backgroundColor: colors.appBgColor3,
+      borderRadius: sizes.cardRadius,
+      // flexDirection: 'row',
+      // alignItems: 'center',
+      // justifyContent: 'space-between'
+  },
+  borderedWrapper: {
+      marginHorizontal: sizes.marginHorizontal,
+      paddingHorizontal: sizes.marginHorizontal / 1.25,
+      paddingVertical: sizes.marginVertical / 1.5,
+      borderWidth: 1,
+      borderColor: colors.appBgColor3,
+      borderRadius: sizes.cardRadius,
+  },
 })
