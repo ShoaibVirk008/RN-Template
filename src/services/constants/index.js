@@ -32,25 +32,12 @@ export const headers = {
 }
 export const tabs = {
     tabBarOptions: {
-        //showLabel: false,
-        activeTintColor: colors.appTextColor6,
-        inactiveTintColor: colors.appTextColor6,
+        showLabel: false,
+        tabBarActiveTintColor: colors.appColor1,
+        tabBarInactiveTintColor: colors.appBgColor3,
         allowFontScaling: true,
-        style: appStyles.tabBarStyle,
+        tabBarStyle: appStyles.tabBarStyle,
         activeBackgroundColor: '#FFFFFF40',
         tabStyle: { borderRadius: 20, marginHorizontal: 7.5, marginVertical: 2 }
     },
-    topTabBarOptions: {
-        //showLabel: false,
-        activeTintColor: colors.appColor1,
-        inactiveTintColor: colors.appColor1,
-        allowFontScaling: true,
-        style: appStyles.searchTopTabBarStyle,
-        showIcon: true,
-        indicatorStyle: { backgroundColor: colors.appColor1 },
-        tabStyle: { flexDirection: 'row' },
-        labelStyle: [appStyles.textRegular, appStyles.textPrimaryColor]
-        // activeBackgroundColor:'#FFFFFF40',
-        //tabStyle:{borderRadius:20,marginHorizontal:7.5,marginVertical:2}
-    }
 }
