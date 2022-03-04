@@ -1,4 +1,4 @@
-package com.rn65;
+package com.reactnativeboilerplate;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RN65";
+    return "ReactNativeBoilerPlate";
   }
 }
