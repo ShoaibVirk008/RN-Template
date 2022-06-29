@@ -9,13 +9,13 @@ import { Texts } from '..';
 export const Back = ({ style, onPress, size }) => {
     return (
         <Icon
-            name="ios-arrow-back"
-            type="ionicon"
-            size={size ? size : totalSize(2)}
+            name="chevron-left"
+            type="feather"
+            size={size ? size : totalSize(3)}
             //raised
-            reverse
-            reverseColor={colors.appTextColor6}
-            color={colors.appColor1}
+            // reverse
+            // reverseColor={colors.appTextColor6}
+            color={colors.appTextColor3}
             iconStyle={style}
             onPress={onPress}
         />
@@ -41,7 +41,7 @@ export const Button = ({ buttonStyle, onPress, shadow, shadowColored, iconSize, 
         >
             {
                 customIcon ?
-                    <CustomIcon icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={iconColor} containerStyle={iconStyle} />
+                    <Custom icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={iconColor} containerStyle={iconStyle} />
                     :
                     <Icon
                         name={iconName ? iconName : "heart"}

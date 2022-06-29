@@ -4,12 +4,20 @@ import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, sizes } from '../../services';
 import * as Animatable from 'react-native-animatable'
+import LinearGradient from 'react-native-linear-gradient';
 
 export const Main = ({ children, style, animation }) => {
     return (
         <Animatable.View animation={animation} style={[appStyles.mainContainer, style]}>
             {children}
         </Animatable.View>
+    );
+}
+export const Gradient = ({ children, style, gradiantColors }) => {
+    return (
+        <LinearGradient style={[{ flex: 1 }, style]} colors={gradiantColors ? gradiantColors : colors.appGradiantColors1}>
+            {children}
+        </LinearGradient>
     );
 }
 export const MainPrimary = ({ children, style, animation }) => {
