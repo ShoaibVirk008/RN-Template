@@ -6,6 +6,7 @@ import AuthNavigation from './authNavigation';
 import AppNavigation from './appNavigation';
 import { routes } from '../services';
 import { Splash } from '../screens/authFlow';
+import { navigationRef } from './rootNavigation';
 
 
 const MainStack = createNativeStackNavigator();
@@ -23,7 +24,9 @@ export default function Navigation() {
         return <Splash />
     else
         return (
-            <NavigationContainer>
+            <NavigationContainer
+            ref={navigationRef}
+            >
                 <MainStack.Navigator
                     screenOptions={{ headerShown: false }}
                     initialRouteName={routes.auth}

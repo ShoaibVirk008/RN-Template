@@ -15,6 +15,7 @@ import * as Toasts from './toasts'
 import * as Headers from './headers'
 import * as Pickers from './pickers'
 import * as Wrappers from './wrappers'
+import * as Chips from './chips'
 
 
 
@@ -23,6 +24,6 @@ export {
     TextInputs, Logos, Cards, Lines, Images,
     CheckBoxes, ScrollViews,Loaders,
     Modals,Toasts,Headers,Pickers,
-    Wrappers
+    Wrappers,Chips
 }
 

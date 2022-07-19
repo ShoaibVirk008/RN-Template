@@ -9,23 +9,23 @@ export const Spacer = ({ style, width, height }) => {
         <View style={[{ height: height, width: width }, style]} />
     );
 }
-export const Base = ({ }) => {
+export const Base = ({ horizontal }) => {
     return (
-        <Spacer height={sizes.baseMargin} />
+        <Spacer height={!horizontal ? sizes.baseMargin : 0} width={horizontal && sizes.baseMargin} />
     );
 }
-export const Tiny = ({ }) => {
+export const Tiny = ({ horizontal }) => {
     return (
-        <Spacer height={sizes.TinyMargin} />
+        <Spacer height={!horizontal ? sizes.TinyMargin : 0} width={horizontal && sizes.TinyMargin} />
     );
 }
-export const Small = ({ }) => {
+export const Small = ({ horizontal }) => {
     return (
-        <Spacer height={sizes.smallMargin} />
+        <Spacer height={!horizontal ? sizes.smallMargin : 0} width={horizontal && sizes.smallMargin} />
     );
 }
-export const DoubleBase = ({ }) => {
+export const DoubleBase = ({ horizontal }) => {
     return (
-        <Spacer height={sizes.doubleBaseMargin} />
+        <Spacer height={!horizontal ? sizes.doubleBaseMargin : 0} width={horizontal && sizes.doubleBaseMargin} />
     );
 }

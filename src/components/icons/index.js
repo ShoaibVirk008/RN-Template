@@ -75,18 +75,23 @@ export const WithText = ({ text, containerStyle, title, customIcon, onPress, tin
         <TouchableOpacity activeOpacity={1} onPress={onPress} style={[{ flexDirection: direction ? direction : 'row', alignItems: 'center', }, containerStyle]}>
             {
                 customIcon ?
-                    <CustomIcon icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={tintColor ? tintColor : colors.appColor1} />
+                    <Custom icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={tintColor && tintColor} />
                     :
                     <Icon name={iconName ? iconName : 'email'} type={iconType ? iconType : 'material-community'} size={iconSize ? iconSize : totalSize(2)} color={tintColor ? tintColor : colors.appTextColor1} iconStyle={iconStyle} />
             }
-            <View style={direction === 'column' ? { marginVertical: height(1.5) } : { marginHorizontal: width(2) }}>
+            <View style={[direction === 'column' ? { marginVertical: height(1.5) } : { marginHorizontal: width(2) },]}>
                 {
                     title ?
-                        <Text style={[appStyles.textRegular, { color: tintColor ? tintColor : colors.appTextColor1, fontFamily: FontFamily.appTextBold, marginBottom: 5 }, titleStyle]}>{title}</Text>
+                        <Text style={[appStyles.textRegular, appStyles.fontBold, { color: tintColor ? tintColor : colors.appTextColor1, marginBottom: 5 }, titleStyle]}>{title}</Text>
                         :
                         null
                 }
-                <Texts.Small style={[{ color: tintColor ? tintColor : colors.appTextColor1, }, textStyle]}>{text}</Texts.Small>
+                {
+                    text ?
+                        <Texts.Small style={[{ color: tintColor ? tintColor : colors.appTextColor1, }, textStyle]}>{text}</Texts.Small>
+                        :
+                        null
+                }
             </View>
         </TouchableOpacity>
     );
