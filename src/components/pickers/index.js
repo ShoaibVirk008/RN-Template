@@ -1,30 +1,57 @@
 import React, { useRef, useState } from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated } from 'react-native'
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, fontSize, fontFamily, sizes, appIcons, appStyles } from '../../services';
+import { colors, fontSize, fontFamily, sizes, appIcons, appStyles, HelpingMethods } from '../../services';
 import RNPickerSelect from 'react-native-picker-select'
-import { Icons, Spacers, Texts, Wrappers } from '..';
+import { Icons, Spacers, TextInputs, Texts, Wrappers } from '..';
 
 export const Primary = ({
     onDonePress, containerStyle, data, title, onChange,
     placeholder, error, value, itemKey,
-    left, customIconLeft, iconSizeLeft, iconColorLeft, iconStyleLeft, iconNameLeft
+    left, customIconLeft, iconSizeLeft, iconColorLeft,
+    iconStyleLeft, iconNameLeft, mainContainerStyle, iconTypeLeft
 }) => {
     const placeholderObject = {
         label: placeholder, value: 'placeholder', color: '#909090',
     }
+    const [titleMarginBottom] = useState(new Animated.Value(value ? height(6) : 0))
+    //const [titleSize] = useState(new Animated.Value(fontSize.regular))
+    //const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
+    //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
+    //const [titleSize, setTitleSize] = useState(fontSize.input)
+    const moveTitleUp = () => {
+        Animated.timing(titleMarginBottom, {
+            toValue: height(6),
+            duration: 250,
+            speed: 50,
+            useNativeDriver: false
+        }).start();
+    };
+    const moveTitleDown = () => {
+        Animated.timing(titleMarginBottom, {
+            toValue: 0,
+            duration: 250,
+            speed: 50,
+            useNativeDriver: false
+        }).start();
+    };
+    const onChangeValue = (value) => {
+        value === 'placeholder' ? moveTitleDown() : moveTitleUp()
+    }
     return (
-        <Wrappers.Primary>
-            <Wrappers.Component>
-                <Texts.Input>{title}</Texts.Input>
-            </Wrappers.Component>
-            <Spacers.Base/>
-            <View style={[appStyles.inputContainerColored, {
-                borderRadius: 2,
-                backgroundColor: colors.appBgColor2,
-                borderWidth: 1,
-                borderColor: colors.appBgColor3
+        <Wrappers.Primary
+            style={[{ marginHorizontal: sizes.marginHorizontal }, mainContainerStyle]}
+        >
+            {/* <ComponentWrapper>
+                <InputTitle>{title}</InputTitle>
+            </ComponentWrapper>
+            <Spacer height={sizes.TinyMargin} /> */}
+            <View style={[appStyles.inputContainerUnderLined, {
+                //borderRadius: sizes.b,
+                borderBottomWidth: 1,
+                borderBottomColor: colors.appColor1,
+                marginHorizontal: 0
             }, containerStyle]}>
                 {
                     left ?
@@ -43,48 +70,60 @@ export const Primary = ({
                                 null
                 }
                 <Wrappers.Primary flex={8}>
+                    <Wrappers.Absolute style={{ top: 0, bottom: 0, ...appStyles.center, backgroundColor: 'transparet', }}>
+                        <Wrappers.Primary style={{ marginBottom: titleMarginBottom }}>
+                            <Texts.Input >{title}</Texts.Input>
+                        </Wrappers.Primary>
+                    </Wrappers.Absolute>
                     <RNPickerSelect
                         onDonePress={onDonePress}
-                        onValueChange={onChange}
+                        onValueChange={(value, index) => {
+                            onChangeValue(value, index)
+                            onChange ? onChange(value, index) : null;
+                        }}
                         value={value}
                         itemKey={itemKey}
                         items={data}
                         placeholder={placeholderObject}
                         useNativeAndroidPickerStyle={false}
                         pickerProps={{ mode: 'dropdown' }}
+                        //  pickerProps={{ mode: 'dropdown',overflow: 'hidden', style: { overflow: 'hidden' } }}
+                        // pickerProps={{ style: { height: 214, overflow: 'hidden' } }}
                         style={{
+                            width: width(100),
                             ...PickerPrimaryStyles,
                             iconContainer: {
-                                top: height(2.5),
-                                right: width(5),
+                                top: height(3.5),
+                                right: 0,
                             },
                         }}
                         Icon={() =>
-                            //<Icon name="ios-chevron-down" type="ionicon" size={totalSize(2.5)} color={colors.appTextColor3} />
-                            <Icons.Custom
-                                icon={appIcons.dropdown_normal}
-                                size={totalSize(2)}
-                            />
+                            <Icon name="caret-down-sharp" type="ionicon" size={totalSize(1.5)} color={colors.appColor1} />
+                            // <CustomIcon
+                            //     icon={appIcons.dropdown_normal}
+                            //     size={totalSize(2)}
+                            // />
                         }
                     />
                 </Wrappers.Primary>
             </View>
             {
                 error ?
-                    // <Absolute animation="shake" style={{ bottom: 0, right: sizes.marginHorizontal, left: 0, }}>
+                    // <AbsoluteWrapper animation="shake" style={{ bottom: 0, right: sizes.marginHorizontal, left: 0, }}>
                     //     <SmallText style={[{ color: colors.error, textAlign: 'right' }]}>{error}</SmallText>
-                    // </Absolute>
-                    <Wrappers.Component style={{}} animation="shake">
-                         <Spacers.Tiny/>
+                    // </AbsoluteWrapper>
+                    <Wrappers.Primary style={{}} animation="shake">
+                        <Spacers.Tiny />
                         <Icons.WithText
                             iconName="alert-circle-outline"
                             //title="New"
                             text={error}
+
                             tintColor={colors.error}
-                            iconSize={sizes.icons.small}
+                            iconSize={sizes.icons.tiny}
                             textStyle={[{ fontSize: fontSize.small }]}
                         />
-                    </Wrappers.Component>
+                    </Wrappers.Primary>
                     :
                     null
             }
@@ -95,11 +134,11 @@ export const Primary = ({
 const PickerPrimaryStyles = StyleSheet.create({
     inputIOS: {
         fontSize: fontSize.medium,
-        fontFamily: fontFamily.appTextMedium,
+        fontFamily: fontFamily.appTextRegular,
         //paddingVertical: height(2),
         height: height(8),
-        // paddingHorizontal: width(5),
-        marginHorizontal: width(5),
+        paddingHorizontal: 0,
+        marginHorizontal: 0,
         //borderWidth: 1,
         //borderColor: colors.appTextColor5,
         //  borderRadius: 5,
@@ -108,11 +147,12 @@ const PickerPrimaryStyles = StyleSheet.create({
     },
     inputAndroid: {
         fontSize: fontSize.medium,
-        fontFamily: fontFamily.appTextMedium,
-        // paddingHorizontal: width(5),
+        fontFamily: fontFamily.appTextRegular,
         //paddingVertical: height(2),
         height: height(8),
-        marginHorizontal: width(5),
+        paddingHorizontal: 0,
+        marginHorizontal: 0,
+        //paddingTop: 2,
         // borderWidth: 1,
         // borderColor: colors.appTextColor5,
         //borderRadius: 5,
@@ -122,4 +162,122 @@ const PickerPrimaryStyles = StyleSheet.create({
 });
 
 
+export function Searchable({ placeholder, error, titleStyle, containerStyle, iconColor, inputBorderStyle, data, value, inputStyle, onPressItem, onPressAdd, title, onChangeText, right, left, tintColor, onFocus, onBlur }) {
+    const searchInputRef = useRef(null)
+    const [isFocused, setFocused] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('')
+    const handleOnFocus = () => {
+        HelpingMethods.handleAnimation()
+        setFocused(true)
+    }
+    const handleOnBlur = () => {
+        HelpingMethods.handleAnimation()
+        setFocused(false)
+        setSearchQuery('')
+    }
+    const handleOnPressItem = () => {
+        HelpingMethods.handleAnimation()
+        handleOnBlur()
+        searchInputRef.current.blur()
+        setSearchQuery('')
+    }
+    const getData = () => {
+        let tempData = []
+        if (searchQuery) {
+            let query = searchQuery.toLowerCase()
+            tempData = data?.filter(item => {
+                return (
+                    item.label.toLowerCase().includes(query)
+                )
+            })
+        } else {
+            tempData = data
+        }
+        return tempData
+        //console.log('Searched options===>',tempData)
+    }
+
+    return (
+        <Wrappers.Primary>
+            <TextInputs.Underlined
+                containerStyle={containerStyle}
+                title={title}
+                titleStyle={titleStyle}
+                inputBorderStyle={inputBorderStyle}
+                inputRef={searchInputRef}
+                placeholder={isFocused ? "Type Here" : placeholder}
+                placeholderTextColor={tintColor}
+                value={value ? value : searchQuery ? searchQuery : ''}
+                onFocus={() => {
+                    handleOnFocus();
+                    onFocus && onFocus()
+                }}
+                onBlur={() => {
+                    handleOnBlur();
+                    onBlur && onBlur()
+                }}
+                onChangeText={text => {
+                    setSearchQuery(text);
+                    onChangeText ? onChangeText(text) : null
+                }}
+                inputStyle={inputStyle}
+                error={error}
+                right={
+                    right ? right :
+                        <Icon name="caret-down-sharp" type="ionicon" size={totalSize(1.5)} color={[iconColor, colors.appColor1]} />
+                }
+                left={left}
+            />
+            {
+                isFocused &&
+                <Wrappers.Component style={{ height: "auto", backgroundColor: colors.appBgColor2, marginBottom: sizes.smallMargin }}>
+                    {
+                        getData().length ?
+                            // <FlatList
+                            // scrollEnabled={false}
+                            //     data={
+                            //         getData()
+                            //     }
+                            //     keyboardShouldPersistTaps
+                            //     nestedScrollEnabled
+                            //     ListHeaderComponent={() => {
+                            //         return (
+                            //             <Spacers.Tiny />
+                            //         )
+                            //     }}
+                            //     renderItem={({ item, index }) => {
+                            //         return (
+                            //             <Wrappers.Component style={{}}>
+                            //                 <TouchableOpacity onPress={() => onPressItem(item, index, handleOnPressItem())} activeOpacity={1} style={{ paddingVertical: sizes.TinyMargin }}>
+                            //                     <Texts.Medium style={[appStyles.textMedium]}>{item.label}</Texts.Medium>
+                            //                 </TouchableOpacity>
+                            //             </Wrappers.Component>
+                            //         )
+                            //     }}
+                            // />
+                            <>
+                                <Spacers.Tiny />
+                                {
+                                    getData().map((item, index) => {
+                                        return (
+                                            <Wrappers.Component key={index + ''} style={[appStyles.marginHorizontalSmall]}>
+                                                <TouchableOpacity onPress={() => onPressItem(item, index, handleOnPressItem())} activeOpacity={1} style={{ paddingVertical: sizes.TinyMargin }}>
+                                                    <Texts.Medium style={[appStyles.textMedium]}>{item.label}</Texts.Medium>
+                                                </TouchableOpacity>
+                                            </Wrappers.Component>
+                                        )
+                                    })
+                                }
+                            </>
+                            :
+                            <Wrappers.Primary style={{ flex: 1, ...appStyles.center }}>
+                                <Texts.Regular style={[appStyles.textGray]}>No Data Available</Texts.Regular>
+                            </Wrappers.Primary>
+                    }
+
+                </Wrappers.Component>
+            }
+        </Wrappers.Primary >
+    )
+}
 
