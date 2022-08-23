@@ -20,6 +20,7 @@ export const Colored = ({
                                 icon={customIcon}
                                 size={iconSize ? iconSize : totalSize(3)}
                                 color={tintColor && tintColor}
+                                containerStyle={[{ marginRight: width(2.5) }, iconStyle]}
                             />
                             :
                             iconName ?
@@ -28,7 +29,7 @@ export const Colored = ({
                                     type={iconType ? iconType : "material-community"}
                                     size={iconSize ? iconSize : totalSize(3)}
                                     color={tintColor ? tintColor : colors.appTextColor6}
-                                //iconStyle={[{ marginRight: width(2.5) }, iconStyle]}
+                                    iconStyle={[{ marginRight: width(2.5) }, iconStyle]}
                                 />
                                 :
                                 null
@@ -87,7 +88,7 @@ export const Bordered = ({ text, onPress, buttonStyle, textStyle, iconName, cust
                             icon={customIcon}
                             size={iconSize ? iconSize : totalSize(3)}
                             color={iconColor ? iconColor : null}
-                            style={[{ marginRight: width(5) }, iconStyle]}
+                            containerStyle={[{ marginRight: width(2.5) }, iconStyle]}
                         />
                         :
                         iconName ?
@@ -96,7 +97,7 @@ export const Bordered = ({ text, onPress, buttonStyle, textStyle, iconName, cust
                                 type={iconType ? iconType : "material-community"}
                                 size={iconSize ? iconSize : totalSize(3)}
                                 color={iconColor ? iconColor : tintColor ? tintColor : colors.appColor1}
-                                iconStyle={[{ marginRight: width(5) }, iconStyle]}
+                                iconStyle={[{ marginRight: width(2.5) }, iconStyle]}
 
                             />
                             :

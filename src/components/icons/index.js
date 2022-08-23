@@ -53,10 +53,10 @@ export const Button = ({ buttonStyle, onPress, shadow, shadowColored, iconSize, 
         </TouchableOpacity>
     );
 }
-export const Custom = ({ icon, size, animation, duration, color, onPress }) => {
+export const Custom = ({ icon, size, animation, duration, color, onPress,containerStyle }) => {
     const defaulSize = totalSize(5)
     return (
-        <Wrapper animation={animation} duration={duration}>
+        <Wrapper animation={animation} duration={duration} style={containerStyle}>
             <TouchableOpacity disabled={!onPress} onPress={onPress}>
                 <Image
                     source={icon}
