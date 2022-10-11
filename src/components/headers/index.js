@@ -1,8 +1,10 @@
 import React from 'react'
 import { appStyles, sizes } from '../../services'
-import {Icons, Wrapper, Text } from '..'
+//import {Icons, Wrapper, Text } from '..'
 import { goBack } from '../../navigation/rootNavigation'
-
+import * as Icons from '../icons';
+import Wrapper from '../wrapper';
+import Text from '../text';
 
 
 export const Primary = ({ onBackPress, title, right, left, showBackArrow }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text } from 'react-native'
-import { appStyles, colors, fontFamily, sizes, appIcons } from '../../services';
+import { appStyles,  } from '../../services';
 
 export default ({
     style,

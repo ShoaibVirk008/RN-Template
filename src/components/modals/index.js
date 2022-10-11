@@ -3,11 +3,12 @@ import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropT
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles } from '../../services';
-import { Absolute } from '../wrappers';
 import Modal from 'react-native-modal'
 import { styles } from './styles';
-import { Lines, Spacer, Wrapper, Text } from '..';
-
+import * as Lines from '../lines';
+import Wrapper from '../wrapper';
+import Text from '../text';
+import * as  Spacer from '../spacer';
 
 
 export const Swipable = ({ children, title, isVisible, toggleModal, footerFlex, headerFlex }) => {

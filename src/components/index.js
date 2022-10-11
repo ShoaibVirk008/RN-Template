@@ -1,3 +1,6 @@
+import Wrapper from './wrapper'
+import Text from './text'
+import Spacer from './spacer'
 import * as Buttons from './buttons';
 import * as Icons from './icons'
 import * as TextInputs from './textInput'
@@ -11,22 +14,21 @@ import * as Loaders from './loaders'
 import * as Modals from './modals'
 import * as Toasts from './toasts'
 import * as Headers from './headers'
-import * as Pickers from './pickers'
 import * as Chips from './chips'
 import * as StatusBars from './statusBars'
-import Wrapper from './wrapper'
-import Text from './text'
-import Spacer from './spacer'
+import * as Pickers from './pickers'
+
 
 
 
 export {
+    Wrapper, Text, Spacer,
     Buttons, Icons,
     TextInputs, Logos, Cards, Lines, Images,
     CheckBoxes, ScrollViews, Loaders,
     Modals, Toasts, Headers, Pickers,
     Chips, StatusBars,
 
-    Wrapper, Text, Spacer
+  
 }
 

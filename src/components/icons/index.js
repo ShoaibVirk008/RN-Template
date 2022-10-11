@@ -3,7 +3,8 @@ import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 're
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, sizes } from '../../services';
-import { Text,  Wrapper } from '..';
+import Wrapper from '../wrapper';
+import Text from '../text';
 
 export const Back = ({ style, onPress, size }) => {
     return (

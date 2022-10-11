@@ -1,7 +1,9 @@
 import React from 'react'
 import { appStyles, colors, sizes } from "../../services"
 import { totalSize } from "react-native-dimension"
-import { Buttons, Wrapper } from '..'
+import * as Buttons from '../buttons'
+import Wrapper from '../wrapper'
+
 export const Primary = ({ data, onPress, disabled, containerStyle, buttonStyle, textStyle, keyName }) => {
     return (
 

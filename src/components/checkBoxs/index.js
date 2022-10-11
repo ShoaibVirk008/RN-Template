@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, } from 'react-native'
 import { colors, sizes, appStyles } from '../../services';
-import { Icons } from '..';
+import * as Icons from '../icons';
 
 export const Primary = ({
      textStyle, containerStyle, text, checked, 

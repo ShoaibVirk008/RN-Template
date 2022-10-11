@@ -1,6 +1,5 @@
 import React from 'react'
-import { appStyles, colors } from "../../services/utilities"
-import { BackIcon } from "../../components"
+import { appStyles, colors } from "../../services"
 
 
 export const baseURL = ''
@@ -25,7 +24,6 @@ export const headers = {
          headerStyle: [appStyles.headerStyle],
          headerTitleStyle: appStyles.headerTitleStyle,
          headerTintColor: colors.appTextColor4,
-         headerBackImage: () => <BackIcon />,
          headerBackTitle: ' '
 
     }

@@ -3,7 +3,10 @@ import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, sizes, fontSize } from '../../services';
-import { Icons, Wrapper,Text, Spacer } from '..';
+import * as Icons from '../icons';
+import Wrapper from '../wrapper';
+import Text from '../text';
+import * as  Spacer from '../spacer';
 const Colored = ({
     iconNameRight, inputRef, iconTypeRight, returnKeyLabel,
     returnKeyType, onSubmitEditing, onPress,

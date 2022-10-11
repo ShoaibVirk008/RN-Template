@@ -3,7 +3,9 @@ import { View, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, fontSize, sizes } from '../../services';
-import { Icons, Wrapper, Text } from '..';
+import * as Icons from '../icons';
+import Wrapper from '../wrapper';
+import Text from '../text';
 
 export const Colored = ({
     text, isLoading, activityColor, animation, onPress, disabled, buttonStyle,

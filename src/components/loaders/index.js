@@ -14,7 +14,9 @@ import {
     UIActivityIndicator,
     WaveIndicator,
 } from 'react-native-indicators';
-import { Wrapper, Text, Spacer } from '..';
+import Wrapper from '../wrapper';
+import Text from '../text';
+import * as  Spacer from '../spacer';
 
 
 export const Primary = ({ }) => {

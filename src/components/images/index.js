@@ -3,8 +3,7 @@ import {Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes } 
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles } from '../../services';
-import { Wrapper } from '..';
-//import LinearGradient from 'react-native-linear-gradient';
+import Wrapper from '../wrapper';
 
 export const Round = ({ style, size, source }) => {
     const defaultSize = totalSize(5)

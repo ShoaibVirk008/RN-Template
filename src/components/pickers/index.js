@@ -4,7 +4,11 @@ import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, fontSize, fontFamily, sizes, appIcons, appStyles, HelpingMethods } from '../../services';
 import RNPickerSelect from 'react-native-picker-select'
-import { Icons,  TextInputs,  Wrapper, Text, Spacer } from '..';
+import * as Icons from '../icons';
+import * as TextInputs from '../textInput';
+import Wrapper from '../wrapper';
+import Text from '../text';
+import * as  Spacer from '../spacer';
 
 export const Primary = ({
     onDonePress, containerStyle, data, title, onChange,
@@ -233,7 +237,7 @@ export function Searchable({ placeholder, error, titleStyle, containerStyle, ico
                 <Wrapper marginHorizontalBase style={{ height: "auto", backgroundColor: colors.appBgColor2, marginBottom: sizes.smallMargin }}>
                     {
                         getData().length ?
-                           
+
                             <>
                                 <Spacer isTiny />
                                 {

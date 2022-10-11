@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper } from '..';
+import Wrapper  from '../wrapper';
 
 export const Primary = ({ style, width, height }) => {
     return (
