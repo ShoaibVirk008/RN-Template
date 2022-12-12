@@ -1,5 +1,5 @@
-import React from 'react'
-import { appStyles, colors } from "../../services"
+import {colors}  from "../utilities/colors"
+import  {appStyles}  from "../utilities/appStyles"
 
 
 export const baseURL = ''
