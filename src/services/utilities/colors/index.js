@@ -6,7 +6,7 @@ export const colors = {
   transparent: 'rgba(0,0,0,0)',
   silver: '#F7F7F7',
   steel: '#CCCCCC',
-  error: 'rgba(200, 0, 0, 0.8)',
+
   ricePaper: 'rgba(255,255,255, 0.75)',
   frost: '#D8D8D8',
   cloud: 'rgba(200,200,200, 0.35)',
@@ -25,22 +25,43 @@ export const colors = {
   simpletext: 'gray',
   black: '#000000',
   labeltext: '#8091d0',
+  success: '#00D523',
+  rating: '#FFC400',
 
-  appGradiantColors: ['rgba(108,92,231, 1)', 'rgba(214,48,49, 1)'],
+  error: '#FF0000',
+  error2: '#FF000080',
 
-  appColor1: '#CC4906',
+  appStatus1:'#FBE4C3',
+  appStatus2:'#FFF99E',
+  appStatus3:'#BFFCC3',
+  appStatus4:'#139D37',
+
+  appGradiantColors: ['#4E20EA', 'rgba(214,48,49, 1)'],
+
+  appColor1: '#4E20EA',
   appColor2: 'rgba(214,48,49, 1)',
+  appColor3:'#E8B02D',
+  appColor5: '#FFF5E5',
+  appColor6:'#FFFF00',
+  appColor7:'#FF9A9A',
+  appColor8:'#FB7979',
+  appColor9:'#003162',
+  appColor10:'#FFDD00',
+
 
   appTextColor1: '#000000',
   appTextColor2: 'rgba(26,26,26, 1)',
-  appTextColor3: 'rgba(49,49,49, 1)',
+  appTextColor3: '#333333',
   appTextColor4: 'grey',
   appTextColor5: '#A1A1A1',
   appTextColor6: '#FFFFFF',
+  appTextColor7:'#DED9D9',
 
   appBgColor1: '#FFFFFF',
-  appBgColor2: '#F7F7F7',
-  appBgColor3: '#CCCCCC',
-  appBgColor4: '#414141'
+  appBgColor2: '#F8F8F8',
+  appBgColor3: '#E9E9E9',
+  appBgColor4: '#AAAAAA',
+  appBgColor5: 'rgba(26,26,26, 1)',
+  appBgColor6: '#000000'
 }
 

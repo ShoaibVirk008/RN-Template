@@ -37,12 +37,12 @@ export const appStyles = StyleSheet.create({
   h5: {
     fontSize: fontSize.h5,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextMedium
+    fontFamily: fontFamily.appTextBold
   },
   h6: {
     fontSize: fontSize.h6,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextMedium
+    fontFamily: fontFamily.appTextBold
   },
   textLarge: {
     fontSize: fontSize.large,
@@ -54,8 +54,18 @@ export const appStyles = StyleSheet.create({
     color: colors.appTextColor1,
     fontFamily: fontFamily.appTextRegular
   },
+  textRegularPlus: {
+    fontSize: fontSize.regular_plus,
+    color: colors.appTextColor1,
+    fontFamily: fontFamily.appTextRegular
+  },
   textRegular: {
     fontSize: fontSize.regular,
+    color: colors.appTextColor1,
+    fontFamily: fontFamily.appTextRegular
+  },
+  textSmallPlus: {
+    fontSize: fontSize.small_plus,
     color: colors.appTextColor1,
     fontFamily: fontFamily.appTextRegular
   },
@@ -69,10 +79,15 @@ export const appStyles = StyleSheet.create({
     color: colors.appTextColor1,
     fontFamily: fontFamily.appTextRegular
   },
-  xTinyText:{
+  xTinyText: {
     fontSize: fontSize.xTiny,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular 
+    fontFamily: fontFamily.appTextRegular
+  },
+  xxTinyText: {
+    fontSize: fontSize.xxTiny,
+    color: colors.appTextColor1,
+    fontFamily: fontFamily.appTextRegular
   },
   inputContainerUnderLined: {
     marginHorizontal: width(5),
@@ -102,8 +117,8 @@ export const appStyles = StyleSheet.create({
     height: sizes.inputHeight,
     //width: width(80),
     color: colors.appTextColor3,
-    fontFamily: fontFamily.appTextLight,
-    fontSize: fontSize.small
+    fontFamily: fontFamily.appTextRegular,
+    fontSize: fontSize.medium
   },
   inputFieldBorderd: {
     marginHorizontal: width(5),
@@ -169,9 +184,9 @@ export const appStyles = StyleSheet.create({
   },
   headerStyle: {
     backgroundColor: colors.appBgColor1,
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 1,
     borderBottomColor: colors.appTextColor4,
-    height: height(10)
+    height: sizes.headerHeight
   },
   headerTitleStyle: {
     fontSize: totalSize(2),
@@ -189,7 +204,6 @@ export const appStyles = StyleSheet.create({
     },
     shadowOpacity: 0.2,
     shadowRadius: 3.5,
-
     elevation: 3,
   },
   shadowExtraLight: {
@@ -261,16 +275,19 @@ export const appStyles = StyleSheet.create({
   textCenter: {
     textAlign: 'center'
   },
-  alignTextRight:{
+  alignTextRight: {
     textAlign: 'right'
   },
-  textColor2:{
+  textColor2: {
     color: colors.appTextColor2
+  },
+  textColor3:{
+    color: colors.appTextColor3
   },
   textGray: {
     color: colors.appTextColor4
   },
-  textDarkGray:{
+  textDarkGray: {
     color: colors.appTextColor3
   },
   textLightGray: {
@@ -282,7 +299,7 @@ export const appStyles = StyleSheet.create({
   textSecondaryColor: {
     color: colors.appColor2
   },
-  textForthColor:{
+  textForthColor: {
     color: colors.appColor4
   },
   textWhite: {
@@ -326,7 +343,7 @@ export const appStyles = StyleSheet.create({
     fontSize: totalSize(2.2),
     color: '#000000',
     fontFamily: fontFamily.appTextMedium,
-    letterSpacing:totalSize(0.25)
+    letterSpacing: totalSize(0.25)
   },
   tabBarStyle: {
     height: sizes.tabBarHeight,
@@ -336,7 +353,7 @@ export const appStyles = StyleSheet.create({
     //borderTopRightRadius: sizes.cardRadius,
     // paddingTop: height(1),
     //borderRadius: sizes.buttonRadius,
-    backgroundColor: colors.appBgColor6+'40',
+    backgroundColor: colors.appBgColor1,
     //paddingVertical:sizes.tabBarHeight/5,
     //position: 'absolute',
     //left: 0,
@@ -346,15 +363,15 @@ export const appStyles = StyleSheet.create({
     //marginBottom: Platform.OS === 'ios' ? height(2.5) : height(1.5),
     //paddingTop: sizes.tabBarHeight / 7,
     paddingBottom: sizes.tabBarHeight / 4,
-    // shadowColor: "#000",
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 5,
-    // },
-    // shadowOpacity: 0.425,
-    // shadowRadius: 8.27,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.425,
+    shadowRadius: 8.27,
 
-    // elevation: 10,
+    elevation: 10,
   },
   coloredWrapper: {
     marginHorizontal: sizes.marginHorizontal,
@@ -384,7 +401,7 @@ export const appStyles = StyleSheet.create({
     marginHorizontal: sizes.marginHorizontal
   },
   marginHorizontalSmall: {
-    marginHorizontal: sizes.marginHorizontal / 2
+    marginHorizontal: sizes.marginHorizontal / 1.5
   },
   marginHorizontalTiny: {
     marginHorizontal: sizes.marginHorizontal / 4
@@ -393,7 +410,7 @@ export const appStyles = StyleSheet.create({
     marginHorizontal: 0
   },
   paddingHorizontalLarge: {
-    paddingHorizontal: sizes.marginHorizontal*2
+    paddingHorizontal: sizes.marginHorizontal * 2
   },
   paddingHorizontalBase: {
     paddingHorizontal: sizes.marginHorizontal
@@ -416,6 +433,9 @@ export const appStyles = StyleSheet.create({
   marginVerticalSmall: {
     marginVertical: sizes.marginVertical / 2
   },
+  marginVerticalTiny: {
+    marginVertical: sizes.marginVertical / 4
+  },
   marginVerticalMedium: {
     marginVertical: sizes.marginVertical * 1.5
   },
@@ -426,16 +446,16 @@ export const appStyles = StyleSheet.create({
     marginVertical: 0
   },
   paddingVerticalLarge: {
-    paddingVertical: sizes.marginVertical*2
+    paddingVertical: sizes.marginVertical * 2
+  },
+  paddingVerticalMedium: {
+    paddingVertical: sizes.marginVertical * 1.5
   },
   paddingVerticalBase: {
     paddingVertical: sizes.marginVertical
   },
   paddingVerticalSmall: {
     paddingVertical: sizes.marginVertical / 2
-  },
-  paddingVerticalMedium:{
-    paddingVertical: sizes.marginVertical *1.5
   },
   paddingVerticalTiny: {
     paddingVertical: sizes.marginVertical / 4
@@ -449,19 +469,37 @@ export const appStyles = StyleSheet.create({
   justifyContentSpaceBetween: {
     justifyContent: 'space-between'
   },
+  justifyContentCenter: {
+    justifyContent: 'center',
+  },
+  justifyContentSpaceEvenly: {
+    justifyContent: 'space-evenly',
+  },
+  justifyContentFlexend: {
+    justifyContent: 'flex-end',
+  },
+  justifyContentFlexstart: {
+    justifyContent: 'flex-start',
+  },
   alignItemsCenter: {
     alignItems: 'center'
   },
-  alignItemsFlexEnd:{
+  alignItemsFlexEnd: {
     alignItems: 'flex-end'
   },
-  alignItemsFlexStart:{
+  alignItemsFlexStart: {
     alignItems: 'flex-start'
   },
   backgroundColorWhite: {
     backgroundColor: colors.appBgColor1
   },
-  textUnderlined:{
-    textDecorationLine:'underline'
+  textUnderlined: {
+    textDecorationLine: 'underline'
   },
+  textError:{
+    color:colors.error
+  },
+  textSuccess:{
+    color:colors.success
+  }
 })
