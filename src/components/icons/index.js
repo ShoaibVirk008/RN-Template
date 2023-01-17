@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native'
-import { Icon } from '@rneui/base';
+import { Badge, Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, sizes } from '../../services';
 import Wrapper from '../wrapper';
@@ -21,14 +21,23 @@ export const Back = ({ style, onPress, size }) => {
         />
     );
 }
-export const Button = ({ buttonStyle, onPress, shadow, shadowColored, iconSize, iconColor, iconName, iconType, buttonColor, buttonSize, customIcon, iconStyle, disabled }) => {
+export const Button = ({
+    buttonStyle, onPress, shadow, shadowColored, iconSize, iconColor,
+    iconName, iconType, buttonColor, buttonSize,
+    customIcon, iconStyle, disabled, isRound, showBadge,
+    badgeValue,
+    //text props
+    text, textStyle, textColor, badgeStyle
+}) => {
     const defaultButtonsize = totalSize(5)
+    const defaulIconSize = iconSize ? iconSize : sizes.icons.large
     return (
         <TouchableOpacity
             onPress={onPress}
-            disabled={disabled}
+            disabled={!onPress || disabled}
             style={
                 [styles.IconButtonContainer,
+                isRound && { borderRadius: 100 },
                 {
                     height: buttonSize ? buttonSize : defaultButtonsize,
                     width: buttonSize ? buttonSize : defaultButtonsize,
@@ -41,15 +50,36 @@ export const Button = ({ buttonStyle, onPress, shadow, shadowColored, iconSize, 
         >
             {
                 customIcon ?
-                    <Custom icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={iconColor} containerStyle={iconStyle} />
-                    :
-                    <Icon
-                        name={iconName ? iconName : "heart"}
-                        type={iconType ? iconType : "material-community"}
-                        size={iconSize ? iconSize : sizes.icons.large}
-                        color={iconColor ? iconColor : colors.appColor1}
-                        iconStyl={iconStyle}
+                    <Custom
+                        icon={customIcon}
+                        size={defaulIconSize}
+                        color={iconColor}
+                        containerStyle={iconStyle}
                     />
+
+                    :
+                    text ?
+                        <Text isRegular isMediumFont style={[{ color: textColor || colors.appColor1 }, textStyle]}>{text}</Text>
+                        :
+                        <Icon
+                            name={iconName ? iconName : "heart"}
+                            type={iconType ? iconType : "material-community"}
+                            size={defaulIconSize}
+                            color={iconColor ? iconColor : colors.appColor1}
+                            style={iconStyle}
+                        />
+            }
+            {
+                showBadge ?
+                    <Wrapper isAbsolute style={{ top: 0, right: 0 }}>
+                        <Badge
+                            containerStyle={{}}
+                            value={badgeValue}
+                            badgeStyle={[{ height: defaulIconSize / 2.5, width: defaulIconSize / 2.5, backgroundColor: iconColor || colors.appColor1, borderWidth: 0, borderRadius: 100 }, badgeStyle]}
+                        />
+                    </Wrapper>
+                    :
+                    null
             }
         </TouchableOpacity>
     );
