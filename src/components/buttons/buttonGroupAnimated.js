@@ -11,7 +11,10 @@ import {
 import { StyleSheet } from 'react-native';
 import { height, totalSize, width } from 'react-native-dimension';
 import { appStyles, colors, sizes } from '../../services';
-import { Icons, Wrapper ,Text} from '..';
+import * as Icons from '../icons';
+import Wrapper from '../wrapper';
+import Text from '../text';
+// import { Icons, Wrapper ,Text} from '..';
 import { Icon } from '@rneui/base';
 
 

@@ -1,12 +1,13 @@
 import React from 'react'
-import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Pressable } from 'react-native'
 import { Badge, Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes } from '../../services';
+import { colors, appStyles, sizes, AppSvgs } from '../../services';
 import Wrapper from '../wrapper';
 import Text from '../text';
 
-export const Back = ({ style, onPress, size }) => {
+export const Back = ({ size, onPress,style }) => {
+    const defaultSize = size || totalSize(2.5)
     return (
         <Icon
             name="chevron-left"
@@ -19,16 +20,23 @@ export const Back = ({ style, onPress, size }) => {
             iconStyle={style}
             onPress={onPress}
         />
+        // <Pressable onPress={onPress} disabled={!onPress} >
+        //     <AppSvgs.ChevronLeft
+        //         height={defaultSize}
+        //         width={defaultSize}
+        //     />
+        // </Pressable>
     );
 }
 export const Button = ({
     buttonStyle, onPress, shadow, shadowColored, iconSize, iconColor,
     iconName, iconType, buttonColor, buttonSize,
-    customIcon, iconStyle, disabled, isRound, showBadge,
+    customIcon, svgIcon, iconStyle, disabled, isRound, showBadge,
     badgeValue,
     //text props
     text, textStyle, textColor, badgeStyle
 }) => {
+    const SvgIcon = svgIcon
     const defaultButtonsize = totalSize(5)
     const defaulIconSize = iconSize ? iconSize : sizes.icons.large
     return (
@@ -49,25 +57,33 @@ export const Button = ({
             }
         >
             {
-                customIcon ?
-                    <Custom
-                        icon={customIcon}
-                        size={defaulIconSize}
-                        color={iconColor}
-                        containerStyle={iconStyle}
-                    />
-
-                    :
-                    text ?
-                        <Text isRegular isMediumFont style={[{ color: textColor || colors.appColor1 }, textStyle]}>{text}</Text>
-                        :
-                        <Icon
-                            name={iconName ? iconName : "heart"}
-                            type={iconType ? iconType : "material-community"}
-                            size={defaulIconSize}
-                            color={iconColor ? iconColor : colors.appColor1}
-                            style={iconStyle}
+                svgIcon ?
+                    <Wrapper style={iconStyle}>
+                        <SvgIcon
+                            height={defaulIconSize}
+                            width={defaulIconSize}
                         />
+                    </Wrapper>
+                    :
+                    customIcon ?
+                        <Custom
+                            icon={customIcon}
+                            size={defaulIconSize}
+                            color={iconColor}
+                            containerStyle={iconStyle}
+                        />
+
+                        :
+                        text ?
+                            <Text isRegular isMediumFont style={[{ color: textColor || colors.appColor1 }, textStyle]}>{text}</Text>
+                            :
+                            <Icon
+                                name={iconName ? iconName : "heart"}
+                                type={iconType ? iconType : "material-community"}
+                                size={defaulIconSize}
+                                color={iconColor ? iconColor : colors.appColor1}
+                                style={iconStyle}
+                            />
             }
             {
                 showBadge ?
@@ -84,7 +100,7 @@ export const Button = ({
         </TouchableOpacity>
     );
 }
-export const Custom = ({ icon, size, animation, duration, color, onPress,containerStyle }) => {
+export const Custom = ({ icon, size, animation, duration, color, onPress, containerStyle }) => {
     const defaulSize = totalSize(5)
     return (
         <Wrapper animation={animation} duration={duration} style={containerStyle}>
@@ -100,14 +116,24 @@ export const Custom = ({ icon, size, animation, duration, color, onPress,contain
 }
 
 
-export const WithText = ({ text, containerStyle, title, customIcon, onPress, tintColor, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle, textContainerStyle }) => {
+export const WithText = ({ text, containerStyle, title, customIcon, onPress, tintColor, svgIcon, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle, textContainerStyle }) => {
+    const SvgIcon = svgIcon
+    const defaulIconSize = iconSize ? iconSize : totalSize(2)
     return (
-        <TouchableOpacity activeOpacity={1} onPress={onPress} style={[{ flexDirection: direction ? direction : 'row', alignItems: 'center', }, containerStyle]}>
+        <TouchableOpacity disabled={!onPress} activeOpacity={1} onPress={onPress} style={[{ flexDirection: direction ? direction : 'row', alignItems: 'center', }, containerStyle]}>
             {
-                customIcon ?
-                    <Custom icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={tintColor && tintColor} />
+                svgIcon ?
+                    <Wrapper style={iconStyle}>
+                        <SvgIcon
+                            height={defaulIconSize}
+                            width={defaulIconSize}
+                        />
+                    </Wrapper>
                     :
-                    <Icon name={iconName ? iconName : 'email'} type={iconType ? iconType : 'material-community'} size={iconSize ? iconSize : totalSize(2)} color={tintColor ? tintColor : colors.appTextColor1} iconStyle={iconStyle} />
+                    customIcon ?
+                        <Custom icon={customIcon} size={defaulIconSize} color={tintColor && tintColor} />
+                        :
+                        <Icon name={iconName ? iconName : 'email'} type={iconType ? iconType : 'material-community'} size={defaulIconSize} color={tintColor ? tintColor : colors.appTextColor1} iconStyle={iconStyle} />
             }
             <Wrapper style={[direction === 'column' ? { marginVertical: height(1.5) } : { marginHorizontal: width(2) }, textContainerStyle]}>
                 {
@@ -125,6 +151,18 @@ export const WithText = ({ text, containerStyle, title, customIcon, onPress, tin
             </Wrapper>
         </TouchableOpacity>
     );
+}
+export const Svg = ({ svg, onPress, size }) => {
+    const Svg = svg
+    const defaultSize = size || totalSize(2.5)
+    return (
+        <Pressable onPress={onPress} disabled={!onPress} >
+            <Svg
+                height={defaultSize}
+                width={defaultSize}
+            />
+        </Pressable>
+    )
 }
 
 const styles = StyleSheet.create({
