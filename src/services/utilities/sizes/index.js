@@ -35,7 +35,7 @@ const sizes = {
   screenHeight: width < height ? height : width,
   navBarHeight: (Platform.OS === 'ios') ? 64 : 54,
   buttonRadius: (Platform.OS === 'ios') ? 15 : 20,
-  inputHeight: (Platform.OS === 'ios') ? height*0.06 : height*0.06,
+  inputHeight: (Platform.OS === 'ios') ? height*0.07 : height*0.07,
   buttonHeight: (Platform.OS === 'ios') ? height*0.06 : height*0.06,
   modalRadius: 15,
   cardRadius: (Platform.OS === 'ios') ? 15 : 15,

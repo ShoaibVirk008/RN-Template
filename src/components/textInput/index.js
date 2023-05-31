@@ -6,7 +6,7 @@ import { colors, appStyles, sizes, fontSize } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
-import * as  Spacer from '../spacer';
+import Spacer from '../spacer';
 const Colored = ({
     iconNameRight, inputRef, iconTypeRight, returnKeyLabel,
     returnKeyType, onSubmitEditing, onPress,
