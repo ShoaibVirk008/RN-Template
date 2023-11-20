@@ -3,7 +3,7 @@ export const colors = {
   background: '#1F0808',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
-  transparent: 'rgba(0,0,0,0)',
+  transparent: '#FFFFFF00',
   silver: '#F7F7F7',
   steel: '#CCCCCC',
 
@@ -25,23 +25,27 @@ export const colors = {
   simpletext: 'gray',
   black: '#000000',
   labeltext: '#8091d0',
-  success: '#00D523',
-  rating: '#FFC400',
+  success:'#12E500',
+  success1: '#00D523',
+  rating: '#F4CB1E',
+  warning:'#FFA800',
 
-  error: '#FF0000',
-  error2: '#FF000080',
+  error: '#FF2222',
+  error2: '#FF0000',
 
   appStatus1:'#FBE4C3',
   appStatus2:'#FFF99E',
   appStatus3:'#BFFCC3',
   appStatus4:'#139D37',
 
+
+
   appGradiantColors: ['#4E20EA', 'rgba(214,48,49, 1)'],
 
-  appColor1: '#4E20EA',
-  appColor2: 'rgba(214,48,49, 1)',
-  appColor3:'#E8B02D',
-  appColor5: '#FFF5E5',
+  appColor1: '#0D2533',
+  appColor2: '#F4CB1E',
+  appColor3:'#73A83980',
+  appColor5: '#FFFFD0',
   appColor6:'#FFFF00',
   appColor7:'#FF9A9A',
   appColor8:'#FB7979',
@@ -49,7 +53,8 @@ export const colors = {
   appColor10:'#FFDD00',
 
 
-  appTextColor1: '#000000',
+  appTextColor1: '#0D2533',
+  // appTextColor1: '#000000',
   appTextColor2: 'rgba(26,26,26, 1)',
   appTextColor3: '#333333',
   appTextColor4: 'grey',
@@ -58,10 +63,10 @@ export const colors = {
   appTextColor7:'#DED9D9',
 
   appBgColor1: '#FFFFFF',
-  appBgColor2: '#F8F8F8',
+  appBgColor2: '#F4F4F4',
   appBgColor3: '#E9E9E9',
   appBgColor4: '#AAAAAA',
-  appBgColor5: 'rgba(26,26,26, 1)',
+  appBgColor5: '#A1A1A1',
   appBgColor6: '#000000'
 }
 

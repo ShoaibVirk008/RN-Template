@@ -1,12 +1,14 @@
 import React from 'react'
-import { appStyles, colors, fontSize, sizes } from '../../services'
+import { appStyles, appSvgs, colors, fontSize, responsiveFontSize, responsiveHeight, responsiveWidth, sizes, useSizes } from '../../services'
 //import {Icons, Wrapper, Text } from '..'
 import { goBack } from '../../navigation/rootNavigation'
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
-import {height,totalSize} from 'react-native-dimension'
+import { height, totalSize } from 'react-native-dimension'
 import { Pressable } from 'react-native';
+import Spacer from '../spacer';
+import * as StatusBars from '../statusBars';
 
 
 // export const Primary = ({ onBackPress, title, right, left, showBackArrow,shadow,titleStyle,titleContainerStyle,containerStyle }) => {
@@ -36,13 +38,18 @@ export const Primary = ({
     onBackPress, search, title, right, searchPress,
     left, titleContainerStyle, centerTitle, tintColor,
     containerStyle, headerTitle, alignTitleLeft, showBackArrow,
-    invertColors, titleStyle, leftContainerStyle, rightContainerStyle,shadow,auth }) => {
+    invertColors, titleStyle, leftContainerStyle, rightContainerStyle, shadow, auth }) => {
 
-    const defaultTintColor = !invertColors ? colors.appTextColor3 : colors.appTextColor6
-    const defaultBackgroundColor = !invertColors ? colors.appBgColor1 : colors.appBgColor6
+    const { statusBarHeight, headerHeight, } = useSizes()
+    const defaultTintColor = !invertColors ? colors.appTextColor6 : colors.appColor1
+    const defaultBackgroundColor = !invertColors ? colors.appColor1 : colors.appBgColor1
     return (
-        <Wrapper style={[appStyles.headerStyle, { backgroundColor: defaultBackgroundColor, borderBottomColor: defaultTintColor + '20', paddingTop: sizes.statusBarHeight * 1, paddingBottom: height(1) },shadow&&appStyles.shadowLight, containerStyle]}>
-            <Wrapper flex={1} flexDirectionRow alignItemsCenter style={{  }}>
+        <Wrapper style={[
+            appStyles.headerStyle,
+            { height: headerHeight,
+             backgroundColor: defaultBackgroundColor, borderBottomWidth: 0, paddingTop: statusBarHeight, paddingBottom: height(1) }, shadow && appStyles.shadowLight, containerStyle]}>
+            <StatusBars.Light />
+            <Wrapper flex={1} flexDirectionRow alignItemsCenter style={{}}>
                 {/* <Wrapper isAbsolute
                     style={[
                         { right: 0, left: 0, backgroundColor: 'green', },
@@ -59,20 +66,20 @@ export const Primary = ({
                             <Text isTinyTitle numberOfLines={1} style={{ color: tintColor ? tintColor : defaultTintColor }}>{title}</Text>
                     }
                 </Wrapper> */}
-                <Wrapper flex={1.5}  style={[
+                <Wrapper flex={1.5} style={[
                     // { backgroundColor: 'red' },
                     leftContainerStyle]}>
                     {
                         left ? left :
                             showBackArrow ?
                                 <Pressable
-                                    style={[{ flex: 1},appStyles.center]}
+                                    style={[{ flex: 1 }, appStyles.center]}
                                     onPress={onBackPress ? onBackPress : goBack}
                                 >
                                     <Icons.Back
                                         //onPress={onBackPress}
                                         //onPress={onBackPress ? onBackPress : goBack}
-                                       // style={{ marginLeft: sizes.marginHorizontal }}
+                                        // style={{ marginLeft: sizes.marginHorizontal }}
                                         color={tintColor ? tintColor : defaultTintColor}
                                     />
                                 </Pressable>
@@ -90,7 +97,7 @@ export const Primary = ({
                         titleContainerStyle]}>
                     {
                         headerTitle ? headerTitle :
-                            <Text alignTextCenter  style={[appStyles.headerTitleStyle,{ color: tintColor ? tintColor : defaultTintColor ,fontSize:!auth?totalSize(2.4):totalSize(2.8)}, titleStyle]}>{title}</Text>
+                            <Text alignTextCenter style={[appStyles.headerTitleStyle, { color: tintColor ? tintColor : defaultTintColor, fontSize: !auth ? responsiveFontSize(18) : responsiveFontSize(18) }, titleStyle]}>{title}</Text>
                     }
                 </Wrapper>
 
@@ -107,6 +114,23 @@ export const Primary = ({
                     }
                 </Wrapper>
 
+            </Wrapper>
+        </Wrapper>
+    )
+}
+
+export const Auth = ({ ...PrimaryProps }) => {
+    return (
+        <Wrapper animation={'slideInDown'}>
+            <Primary
+                showBackArrow
+                {...PrimaryProps}
+            />
+            <Wrapper alignItemsCenter backgroundColor={colors.appColor1} style={{ borderBottomRightRadius: 40, borderBottomLeftRadius: 40 }}>
+                <Spacer isBasic />
+                <appSvgs.logo_white height={responsiveHeight(10)} width={responsiveWidth(80)} />
+                <Spacer isDoubleBase />
+                <Spacer isBasic />
             </Wrapper>
         </Wrapper>
     )

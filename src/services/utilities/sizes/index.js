@@ -1,6 +1,7 @@
 import { Dimensions, Platform, StatusBar } from 'react-native'
 import { totalSize } from 'react-native-dimension'
 import DeviceInfo from 'react-native-device-info';
+import { responsiveFontSize } from '../responsive';
 
 const { width, height } = Dimensions.get('window')
 
@@ -18,23 +19,24 @@ const tabBarHeight = Platform.select({
 })
 
 // Used via Metrics.baseMargin
-const sizes = {
+export const sizes = {
   marginBottom : height*0.025,
   marginTop : height*0.025,
   marginHorizontal: width*0.05,
   marginVertical: height*0.025,
   section: 25,
-  TinyMargin: totalSize(0.5),
-  smallMargin: totalSize(1),
-  baseMargin: totalSize(2),
-  doubleBaseMargin: totalSize(5),
+  TinyMargin: responsiveFontSize(4),
+  smallMargin: responsiveFontSize(8),
+  baseMargin: responsiveFontSize(18),
+  mediumMargin: responsiveFontSize(26),
+  doubleBaseMargin: responsiveFontSize(36),
   doubleSection: 50,
   horizontalLineHeight: 1,
   searchBarHeight: 30,
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   navBarHeight: (Platform.OS === 'ios') ? 64 : 54,
-  buttonRadius: (Platform.OS === 'ios') ? 15 : 20,
+  buttonRadius: (Platform.OS === 'ios') ? 100 : 100,
   inputHeight: (Platform.OS === 'ios') ? height*0.07 : height*0.07,
   buttonHeight: (Platform.OS === 'ios') ? height*0.06 : height*0.06,
   modalRadius: 15,
@@ -45,12 +47,12 @@ const sizes = {
   headerHeight:headerHeight+statusBarHeight,
   tabBarHeight:tabBarHeight,
   icons: {
-    tiny: totalSize(1.5),
-    small: totalSize(2),
-    medium: totalSize(2.5),
-    large: totalSize(3.5),
-    xl: totalSize(4.5),
-    xxl: totalSize(5)
+    tiny: responsiveFontSize(14),
+    small: responsiveFontSize(18),
+    medium: responsiveFontSize(24),
+    large:responsiveFontSize(34),
+    xl: responsiveFontSize(42),
+    xxl: responsiveFontSize(48)
   },
   images: {
     small: 20,
@@ -60,4 +62,4 @@ const sizes = {
   }
 }
 
-export  {sizes}
+

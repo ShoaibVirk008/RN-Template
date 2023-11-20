@@ -17,7 +17,7 @@ export default ({
     isSmall,
     isTiny,
     isXTiny,
-    isInput,
+    isInputTitle,
     isButtonRegular,
     isButtonMedium,
     isButtonLarge,
@@ -58,7 +58,7 @@ export default ({
                 isTiny && styles.tinyTextStyle,
                 isXTiny&&appStyles.xTinyText,
 
-                isInput && styles.inputTitleStyle,
+                isInputTitle && styles.inputTitleStyle,
                 isButtonRegular && styles.ButtonTextRegularStyle,
                 isButtonMedium && styles.ButtonTextMediumStyle,
                 isButtonLarge && appStyles.ButtonTextLarge,
@@ -128,8 +128,8 @@ const styles = StyleSheet.create({
     },
     inputTitleStyle: {
         ...appStyles.textRegular,
-        ...appStyles.fontLight,
-        ...appStyles.textColor2
+        ...appStyles.fontBold,
+        //...appStyles.tex
     },
     ButtonTextRegularStyle: {
         ...appStyles.ButtonRegular,

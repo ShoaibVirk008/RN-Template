@@ -1,27 +1,36 @@
 
 import { totalSize } from "react-native-dimension"
+import { responsiveFontSize } from "../responsive"
 
 const fontFamily = {
-  appTextLight: 'Roboto-Light',
-  appTextRegular: 'Roboto-Regular',
-  appTextMedium: 'Roboto-Medium',
-  appTextBold: 'Roboto-Bold',
+  // appTextLight: 'Roboto-Light',
+  // appTextRegular: 'Roboto-Regular',
+  // appTextMedium: 'Roboto-Medium',
+  // appTextBold: 'Roboto-Bold',
+  appTextLight: 'Montserrat-Light',
+  appTextRegular: 'Montserrat-Regular',
+  appTextMedium: 'Montserrat-Medium',
+  appTextBold: 'Montserrat-Bold',
 }
+
+
 const fontSize = {
-  h1: totalSize(4.5),
-  h2: totalSize(4),
-  h3: totalSize(3.5),
-  h4: totalSize(3),
-  h5: totalSize(2.5),
-  h6: totalSize(2),
-  input: totalSize(1.75),
-  large: totalSize(2),
-  medium: totalSize(1.75),
-  regular: totalSize(1.5),
-  small: totalSize(1.25),
-  tiny: totalSize(1)
+  h1: responsiveFontSize(42),
+  h2: responsiveFontSize(38),
+  h3: responsiveFontSize(32),
+  h4: responsiveFontSize(28),
+  h5: responsiveFontSize(24),
+  h6: responsiveFontSize(20),
+  input: responsiveFontSize(1.6),
+  large: responsiveFontSize(18),
+  medium: responsiveFontSize(16),
+  regular: responsiveFontSize(14),
+  small: responsiveFontSize(12),
+  tiny: responsiveFontSize(10),
+  xTiny: responsiveFontSize(6),
+  xxTiny: responsiveFontSize(4)
 }
 
 
-export  {fontFamily,fontSize}
+export { fontFamily, fontSize }
 

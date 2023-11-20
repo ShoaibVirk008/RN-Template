@@ -15,7 +15,7 @@ export const Colored = ({
 }) => {
     return (
         <TouchableOpacity onPress={onPress} disabled={isLoading ? true : disabled}>
-            <Wrapper animation={animation} style={[appStyles.buttonColord, { borderRadius: sizes.buttonRadius, height: sizes.buttonHeight, backgroundColor: disabled ? colors.appColor1 + '80' : buttonColor ? buttonColor : colors.appColor1 }, buttonStyle]}>
+            <Wrapper animation={animation} style={[appStyles.buttonColord, { borderRadius: sizes.buttonRadius, height: sizes.buttonHeight, backgroundColor: disabled ? colors.appColor2 + '80' : buttonColor ? buttonColor : colors.appColor2 }, buttonStyle]}>
                 <Wrapper style={{ flexDirection: direction ? direction : 'row', alignItems: 'center' }}>
                     {
                         customIcon ?
@@ -83,7 +83,7 @@ export const ColoredSmall = ({ text, onPress, buttonStyle, customIcon, direction
 
 export const Bordered = ({ text, onPress, buttonStyle, textStyle, iconName, customIcon, iconType, iconSize, iconColor, iconStyle, tintColor }) => {
     return (
-        <TouchableOpacity onPress={onPress} style={[appStyles.buttonBorderd, { borderRadius: sizes.buttonRadius, height: sizes.buttonHeight, borderColor: tintColor ? tintColor : colors.appColor1 }, buttonStyle]}>
+        <TouchableOpacity onPress={onPress} style={[appStyles.buttonBorderd, { borderRadius: sizes.buttonRadius, height: sizes.buttonHeight, borderColor: tintColor ? tintColor : colors.appColor2 }, buttonStyle]}>
             <Wrapper style={{ flexDirection: 'row', alignItems: 'center' }}>
                 {
                     customIcon ?
@@ -106,7 +106,7 @@ export const Bordered = ({ text, onPress, buttonStyle, textStyle, iconName, cust
                             :
                             null
                 }
-                <Text isButtonMedium style={[{ color: tintColor ? tintColor : colors.appColor1, }, textStyle]}>{text}</Text>
+                <Text isButtonMedium style={[{ color: tintColor ? tintColor : colors.appColor2, }, textStyle]}>{text}</Text>
             </Wrapper>
         </TouchableOpacity>
     );

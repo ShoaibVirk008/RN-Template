@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, fontSize, fontFamily, sizes, appIcons, appStyles, HelpingMethods } from '../../services';
@@ -16,12 +16,16 @@ export const Primary = ({
     left, customIconLeft, iconSizeLeft, iconColorLeft,
     iconStyleLeft, iconNameLeft, mainContainerStyle, iconTypeLeft
 }) => {
+
     const placeholderObject = {
-        label: placeholder, value: 'placeholder', color: '#909090',
+        label: placeholder,
+        value: 'placeholder',
+        color: '#909090',
     }
+
     const [titleMarginBottom] = useState(new Animated.Value(value ? height(6) : 0))
     //const [titleSize] = useState(new Animated.Value(fontSize.regular))
-    //const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
+    const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
     //const [titleSize, setTitleSize] = useState(fontSize.input)
     const moveTitleUp = () => {
@@ -75,8 +79,8 @@ export const Primary = ({
                 }
                 <Wrapper flex={8}>
                     <Wrapper isAbsolute style={{ top: 0, bottom: 0, ...appStyles.center, backgroundColor: 'transparet', }}>
-                        <Wrapper style={{ marginBottom: titleMarginBottom }}>
-                            <Text isInput>{title}</Text>
+                        <Wrapper style={{ marginBottom: value ? FocusedTitleMarginBottom : titleMarginBottom }}>
+                            <Text isInputTitle>{title}</Text>
                         </Wrapper>
                     </Wrapper>
                     <RNPickerSelect
@@ -94,15 +98,26 @@ export const Primary = ({
                         //  pickerProps={{ mode: 'dropdown',overflow: 'hidden', style: { overflow: 'hidden' } }}
                         // pickerProps={{ style: { height: 214, overflow: 'hidden' } }}
                         style={{
-                            width: width(100),
-                            ...PickerPrimaryStyles,
+                            //width: width(100),
+                            ...{
+                                //...PickerPrimaryStyles,
+                                inputIOS: {
+                                    ...PickerPrimaryStyles.inputIOS,
+                                    paddingTop: title ? height(1.5) : null,
+                                },
+                                inputAndroid: {
+                                    ...PickerPrimaryStyles.inputAndroid,
+                                    paddingTop: title ? height(2.5) : null,
+                                }
+                            },
+                            //paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
                             iconContainer: {
                                 top: height(3.5),
                                 right: 0,
                             },
                         }}
                         Icon={() =>
-                            <Icon name="caret-down-sharp" type="ionicon" size={totalSize(1.5)} color={colors.appColor1} />
+                            <Icon name='chevron-thin-down' type='entypo' size={totalSize(1.5)} color={colors.appColor1} />
                             // <CustomIcon
                             //     icon={appIcons.dropdown_normal}
                             //     size={totalSize(2)}
@@ -143,6 +158,7 @@ const PickerPrimaryStyles = StyleSheet.create({
         height: sizes.inputHeight,
         paddingHorizontal: 0,
         marginHorizontal: 0,
+
         //borderWidth: 1,
         //borderColor: colors.appTextColor5,
         //  borderRadius: 5,

@@ -16,7 +16,7 @@ import {
 } from 'react-native-indicators';
 import Wrapper from '../wrapper';
 import Text from '../text';
-import * as  Spacer from '../spacer';
+import Spacer from '../spacer';
 
 
 export const Primary = ({ }) => {

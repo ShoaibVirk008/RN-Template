@@ -2,30 +2,30 @@ import React from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Pressable } from 'react-native'
 import { Badge, Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, AppSvgs } from '../../services';
+import { colors, appStyles, sizes, appSvgs } from '../../services';
 import Wrapper from '../wrapper';
 import Text from '../text';
 
-export const Back = ({ size, onPress,style }) => {
+export const Back = ({ size, onPress, style, color }) => {
     const defaultSize = size || totalSize(2.5)
     return (
-        <Icon
-            name="chevron-left"
-            type="feather"
-            size={size ? size : totalSize(3)}
-            //raised
-            // reverse
-            // reverseColor={colors.appTextColor6}
-            color={colors.appTextColor3}
-            iconStyle={style}
+        // <Icon
+        //     name="chevron-left"
+        //     type="feather"
+        //     size={size ? size : totalSize(3)}
+        //     //raised
+        //     // reverse
+        //     // reverseColor={colors.appTextColor6}
+        //     color={color||colors.appTextColor3}
+        //     iconStyle={style}
+        //     onPress={onPress}
+        // />
+        <Svg
+            svg={appSvgs.arrow_left}
+            size={size ? size : totalSize(2)}
             onPress={onPress}
+            color={color}
         />
-        // <Pressable onPress={onPress} disabled={!onPress} >
-        //     <AppSvgs.ChevronLeft
-        //         height={defaultSize}
-        //         width={defaultSize}
-        //     />
-        // </Pressable>
     );
 }
 export const Button = ({
@@ -38,6 +38,7 @@ export const Button = ({
 }) => {
     const SvgIcon = svgIcon
     const defaultButtonsize = totalSize(5)
+    const _buttonSize = buttonSize ? buttonSize : defaultButtonsize
     const defaulIconSize = iconSize ? iconSize : sizes.icons.large
     return (
         <TouchableOpacity
@@ -47,8 +48,8 @@ export const Button = ({
                 [styles.IconButtonContainer,
                 isRound && { borderRadius: 100 },
                 {
-                    height: buttonSize ? buttonSize : defaultButtonsize,
-                    width: buttonSize ? buttonSize : defaultButtonsize,
+                    height: _buttonSize,
+                    width: _buttonSize,
                     backgroundColor: buttonColor ? buttonColor : colors.appBgColor1
                 },
                 shadow ? appStyles.shadow : null,
@@ -87,11 +88,12 @@ export const Button = ({
             }
             {
                 showBadge ?
-                    <Wrapper isAbsolute style={{ top: 0, right: 0 }}>
+                    <Wrapper isAbsolute style={{ top: 2.5, right: 2.5 }}>
                         <Badge
                             containerStyle={{}}
                             value={badgeValue}
-                            badgeStyle={[{ height: defaulIconSize / 2.5, width: defaulIconSize / 2.5, backgroundColor: iconColor || colors.appColor1, borderWidth: 0, borderRadius: 100 }, badgeStyle]}
+                            textStyle={[appStyles.textTiny, appStyles.textWhite, appStyles.fontBold]}
+                            badgeStyle={[{  backgroundColor: colors.error, borderWidth: 0, borderRadius: 100 }, badgeStyle]}
                         />
                     </Wrapper>
                     :

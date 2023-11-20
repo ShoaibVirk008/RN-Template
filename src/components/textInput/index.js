@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, fontSize } from '../../services';
+import { colors, appStyles, sizes, fontSize, responsiveHeight } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -18,7 +18,8 @@ const Colored = ({
     inputContainerStyle, onPressIconRight, inputStyle,
     right, keyboardType, iconStyleRight, error,
     left, customIconLeft, iconNameLeft, iconTypeLeft, iconSizeLeft,
-    iconColorLeft, iconStyleLeft, onPressIconLeft
+    iconColorLeft, iconStyleLeft, onPressIconLeft,
+    placeholderTextColor
 }) => {
     return (
         <TouchableOpacity
@@ -29,7 +30,7 @@ const Colored = ({
             {
                 title ?
                     <Wrapper style={{ marginHorizontal: 0 }}>
-                        <Text isInput style={[{}, titleStyle]}>{title}</Text>
+                        <Text isInputTitle style={[{}, titleStyle]}>{title}</Text>
                         <Spacer isTiny />
                     </Wrapper>
                     :
@@ -45,12 +46,12 @@ const Colored = ({
                         left
                         :
                         customIconLeft ?
-                            <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal }}>
+                            <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal/2 }}>
                                 <Icons.Custom icon={customIconLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor1} containerStyle={iconStyleLeft} />
                             </Wrapper>
                             :
                             iconNameLeft ?
-                                <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal }}>
+                                <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal/2 }}>
                                     <Icon name={iconNameLeft} type={iconTypeLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor4} iconStyle={iconStyleLeft} onPress={onPressIconLeft} />
                                 </Wrapper>
                                 :
@@ -74,7 +75,7 @@ const Colored = ({
                                 returnKeyType={returnKeyType}
                                 onSubmitEditing={onSubmitEditing}
                                 multiline={multiline}
-                                placeholderTextColor={'#21212180'}
+                                placeholderTextColor={placeholderTextColor||'#21212180'}
                                 keyboardType={keyboardType}
                                 onFocus={onFocus}
                                 onBlur={onBlur}
@@ -226,13 +227,20 @@ const Underlined = ({
     const onBlurInput = () => {
         moveTitleDown()
     }
+
+    const styles = StyleSheet.create({
+        iconContainer: {
+            alignItems: 'flex-end',
+            paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
+        }
+    })
     return (
         <TouchableOpacity disabled={!onPress} activeOpacity={1} onPress={onPress}>
             <Wrapper marginHorizontalBase style={[containerStyle]}>
                 {
                     titleStatic ?
                         <>
-                            <Text isInput>{titleStatic}</Text>
+                            <Text isInputTitle>{titleStatic}</Text>
                         </>
 
                         :
@@ -249,12 +257,12 @@ const Underlined = ({
                             left
                             :
                             customIconLeft ?
-                                <Wrapper style={{ flex: 1, alignItems: 'flex-end' }}>
+                                <Wrapper style={[styles.iconContainer]}>
                                     <Icons.Custom icon={customIconLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor1} containerStyle={iconStyleLeft} />
                                 </Wrapper>
                                 :
                                 iconNameLeft ?
-                                    <Wrapper style={{ flex: 1, alignItems: 'flex-end' }}>
+                                    <Wrapper style={[styles.iconContainer]}>
                                         <Icon name={iconNameLeft} type={iconTypeLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor1} iconStyle={iconStyleLeft} onPress={onPressIconLeft} />
                                     </Wrapper>
                                     :
@@ -263,7 +271,7 @@ const Underlined = ({
                     <View style={[{ flex: 7, justifyContent: 'center' }, inputContainerStyle]}>
                         <Wrapper isAbsolute style={{ top: 0, bottom: 0, ...appStyles.center, backgroundColor: 'transparent', }}>
                             <Wrapper style={{ marginBottom: value ? FocusedTitleMarginBottom : titleMarginBottom }}>
-                                <Text isInput style={[titleStyle, { lineHeight: 16 }]}>{title}</Text>
+                                <Text isInputTitle style={[titleStyle, {}]}>{title}</Text>
                             </Wrapper>
                         </Wrapper>
                         {
@@ -273,7 +281,7 @@ const Underlined = ({
                                         {
                                             value ?
                                                 <Wrapper>
-                                                    <Spacer height={title ? Platform.OS === 'ios' ? height(1) : height(2) : 0} />
+                                                    <Spacer height={title ? Platform.OS === 'ios' ? height(1.25) : height(1.25) : 0} />
                                                     <Text isMedium numberOfLines={1}>{value}</Text>
                                                 </Wrapper>
                                                 :
@@ -303,7 +311,7 @@ const Underlined = ({
                                         multiline={multiline}
                                         placeholderTextColor={placeholderTextColor ? placeholderTextColor : colors.appTextColor4}
                                         secureTextEntry={secureTextEntry}
-                                        style={[appStyles.inputField, { width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 },  inputStyle]}
+                                        style={[appStyles.inputField, { width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
                                     />
                         }
                     </View>
@@ -313,8 +321,8 @@ const Underlined = ({
                             right
                             :
                             iconNameRight ?
-                                <Wrapper flex={1} alignItemsFlexEnd>
-                                    <Icon name={iconNameRight} type={iconTypeRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appBgColor3} iconStyle={iconStyleRight} onPress={onPressIconRight} />
+                                <Wrapper alignItemsFlexEnd style={[styles.iconContainer]}>
+                                    <Icon name={iconNameRight} type={iconTypeRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appTextColor1} iconStyle={iconStyleRight} onPress={onPressIconRight} />
                                 </Wrapper>
                                 :
                                 null
@@ -350,14 +358,14 @@ const SearchBar = ({ value, placeholder, inputContainerStyle, onChangeText, righ
             onChangeText={onChangeText}
             iconNameLeft="search"
             iconTypeLeft="feather"
+            iconSizeLeft={sizes.icons.medium}
             placeholder={placeholder ? placeholder : "Search"}
-            //inputContainerStyle={inputContainerStyle}
+            inputContainerStyle={inputContainerStyle}
             iconNameRight={(value && onPressCross) && 'close-circle'}
             iconTypeRight="ionicon"
             onPressIconRight={onPressCross}
             right={right}
-            inputStyle={{ height: sizes.inputHeight, marginHorizontal: sizes.marginHorizontal / 2 }}
-            iconContainerStyle={{ marginLeft: sizes.marginHorizontal / 2 }}
+            inputStyle={{ height: responsiveHeight(6),paddingHorizontal:sizes.marginHorizontal/2 }}
             {...props}
         />
     )

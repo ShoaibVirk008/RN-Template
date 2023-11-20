@@ -11,13 +11,15 @@ export const KeyboardAvoiding = ({children, style, animation }) => {
     );
 }
 
-export const WithKeyboardAvoidingView = ({ children, footer }) => {
+export const WithKeyboardAvoidingView = ({ children, footer,containerStyle }) => {
     return (
         <KeyboardAvoidingView
-            style={{ flex: 1, }}
+            style={[{ flex: 1, },containerStyle]}
             behavior={Platform.OS === 'ios' ? 'padding' : null}
         >
-            <ScrollView>
+            <ScrollView
+            showsVerticalScrollIndicator={false}
+            >
                 {children}
             </ScrollView>
             {footer}

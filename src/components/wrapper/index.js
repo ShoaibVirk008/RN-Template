@@ -14,6 +14,7 @@ export default ({
     justifyContentFlexend,
     justifyContentFlexstart,
     justifyContentSpaceEvenly,
+    justifyContentSpaceAround,
     //alignItems
     alignItemsCenter,
     alignItemsFlexEnd,
@@ -23,6 +24,7 @@ export default ({
     isAbsolute, isAbsoluteFill, isColored,
     isBorderedWrapper, gradiantColors, isCenter,
     //background
+    backgroundColor,
     background1, background2, backgroundDark,
     isImageBackground, source,
     //paddingHorizontal
@@ -122,6 +124,7 @@ export default ({
                 justifyContentFlexend && appStyles.justifyContentFlexend,
                 justifyContentFlexstart && appStyles.justifyContentFlexstart,
                 justifyContentSpaceEvenly && appStyles.justifyContentSpaceEvenly,
+                justifyContentSpaceAround&&appStyles.justifyContentSpaceAround,
                 //align Items
                 alignItemsCenter && appStyles.alignItemsCenter,
                 alignItemsFlexEnd && appStyles.alignItemsFlexEnd,
@@ -133,6 +136,7 @@ export default ({
                 background1 && appStyles.backgroundColorWhite,
                 background2 && { backgroundColor: colors.appBgColor2 },
                 backgroundDark && { backgroundColor: colors.appBgColor6 },
+                backgroundColor && { backgroundColor },
                 style]}>
             {children}
         </Animatable.View>

@@ -186,12 +186,12 @@ export const appStyles = StyleSheet.create({
     backgroundColor: colors.appBgColor1,
     borderBottomWidth: 1,
     borderBottomColor: colors.appTextColor4,
-    height: sizes.headerHeight
+    //height: sizes.headerHeight
   },
   headerTitleStyle: {
     fontSize: totalSize(2),
     color: colors.appTextColor3,
-    fontFamily: fontFamily.appTextMedium
+    fontFamily: fontFamily.appTextBold
   },
   cardView: {
     marginHorizontal: width(5),
@@ -349,16 +349,16 @@ export const appStyles = StyleSheet.create({
     height: sizes.tabBarHeight,
     borderTopWidth: 0,
     //justifyContent: 'center',
-    // borderTopLeftRadius: sizes.cardRadius,
-    //borderTopRightRadius: sizes.cardRadius,
+    borderTopLeftRadius: sizes.cardRadius,
+   borderTopRightRadius: sizes.cardRadius,
     // paddingTop: height(1),
     //borderRadius: sizes.buttonRadius,
-    backgroundColor: colors.appBgColor1,
+    backgroundColor: colors.appColor1,
     //paddingVertical:sizes.tabBarHeight/5,
-    //position: 'absolute',
-    //left: 0,
-    //right: 0,
-    //bottom: 0,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
     //marginHorizontal: sizes.marginHorizontal,
     //marginBottom: Platform.OS === 'ios' ? height(2.5) : height(1.5),
     //paddingTop: sizes.tabBarHeight / 7,
@@ -474,6 +474,9 @@ export const appStyles = StyleSheet.create({
   },
   justifyContentSpaceEvenly: {
     justifyContent: 'space-evenly',
+  },
+  justifyContentSpaceAround:{
+    justifyContent: 'space-around'
   },
   justifyContentFlexend: {
     justifyContent: 'flex-end',

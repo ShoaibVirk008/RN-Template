@@ -17,6 +17,9 @@ import * as Headers from './headers'
 import * as Chips from './chips'
 import * as StatusBars from './statusBars'
 import * as Pickers from './pickers'
+import * as Rating from './ratings'
+import * as Switches from './switches'
+export *  from './appComponents'
 
 
 
@@ -27,8 +30,8 @@ export {
     TextInputs, Logos, Cards, Lines, Images,
     CheckBoxes, ScrollViews, Loaders,
     Modals, Toasts, Headers, Pickers,
-    Chips, StatusBars,
+    Switches,
+    Chips, StatusBars,Rating,
 
-  
 }
 
