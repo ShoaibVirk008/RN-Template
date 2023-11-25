@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 import { totalSize, height, width } from 'react-native-dimension'
-import { sizes } from '../sizes'
+import { sizes,fontSize } from '../sizes'
 import { colors } from '../colors'
-import { fontFamily, fontSize } from '../fonts'
+import { fontFamily } from '../assets'
 
 export const appStyles = StyleSheet.create({
   bgContainer: {

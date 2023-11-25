@@ -1,7 +1,7 @@
 import React, { } from 'react';
 import Wrapper from '../../wrapper';
 import Text from '../../text';
-import { appImages, appStyles, colors, getSelectedRole, responsiveFontSize, responsiveWidth, routes, sizes, useDatePicker, useImagePicker } from '../../../services';
+import { appSvgs, appStyles, colors, responsiveWidth, sizes,  } from '../../../services';
 import * as TextInputs from '../../textInput';
 import * as Modals from '../../modals';
 import * as Icons from '../../icons';
@@ -133,7 +133,7 @@ export const SuccessPopup = ({ ...PopupPrimaryProps }) => {
             titleStyle={[appStyles.h6, appStyles.textPrimaryColor]}
             icon={
                 <Icons.Svg
-                    svg={appSvgs.checkCircle}
+                    svg={appSvgs.arrow_left}
                     size={responsiveWidth(25)}
                 />
             }
