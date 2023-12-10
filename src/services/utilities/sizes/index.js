@@ -63,7 +63,7 @@ export const sizes = {
 }
 
 
-export const fontSize = {
+export const fontSizes = {
   h1: responsiveFontSize(42),
   h2: responsiveFontSize(38),
   h3: responsiveFontSize(32),

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, fontSize, responsiveHeight } from '../../services';
+import { colors, appStyles, sizes, fontSizes, responsiveHeight } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -191,10 +191,10 @@ const Underlined = ({
     inputStyle, titleStatic, autoCapitalize, children, inputBorderStyle }) => {
 
     const [titleMarginBottom] = useState(new Animated.Value(0))
-    //const [titleSize] = useState(new Animated.Value(fontSize.regular))
+    //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
     const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
-    //const [titleSize, setTitleSize] = useState(fontSize.input)
+    //const [titleSize, setTitleSize] = useState(fontSizes.input)
     const moveTitleUp = () => {
         Animated.timing(titleMarginBottom, {
             toValue: height(5),
@@ -203,7 +203,7 @@ const Underlined = ({
             useNativeDriver: false
         }).start();
         // Animated.spring(titleSize, {
-        //     toValue: fontSize.small,
+        //     toValue: fontSizes.small,
         //     duration: 250,
         //    // useNativeDriver: true
         // }).start();
@@ -216,7 +216,7 @@ const Underlined = ({
             useNativeDriver: false
         }).start();
         // Animated.spring(titleSize, {
-        //     toValue: fontSize.regular,
+        //     toValue: fontSizes.regular,
         //     duration: 250,
         //   //  useNativeDriver: true
         // }).start();
@@ -339,7 +339,7 @@ const Underlined = ({
 
                                 tintColor={colors.error}
                                 iconSize={sizes.icons.tiny}
-                                textStyle={[{ fontSize: fontSize.small }]}
+                                textStyle={[{ fontSize: fontSizes.small }]}
                             />
                         </Wrapper>
                         :

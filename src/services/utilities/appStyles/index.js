@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 import { totalSize, height, width } from 'react-native-dimension'
-import { sizes,fontSize } from '../sizes'
+import { sizes,fontSizes } from '../sizes'
 import { colors } from '../colors'
-import { fontFamily } from '../assets'
+import { appFonts } from '../assets'
 
 export const appStyles = StyleSheet.create({
   bgContainer: {
@@ -15,79 +15,79 @@ export const appStyles = StyleSheet.create({
     backgroundColor: colors.appBgColor1
   },
   h1: {
-    fontSize: fontSize.h1,
+    fontSize: fontSizes.h1,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   h2: {
-    fontSize: fontSize.h2,
+    fontSize: fontSizes.h2,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   h3: {
-    fontSize: fontSize.h3,
+    fontSize: fontSizes.h3,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   h4: {
-    fontSize: fontSize.h4,
+    fontSize: fontSizes.h4,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   h5: {
-    fontSize: fontSize.h5,
+    fontSize: fontSizes.h5,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   h6: {
-    fontSize: fontSize.h6,
+    fontSize: fontSizes.h6,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   textLarge: {
-    fontSize: fontSize.large,
+    fontSize: fontSizes.large,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   textMedium: {
-    fontSize: fontSize.medium,
+    fontSize: fontSizes.medium,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   textRegularPlus: {
-    fontSize: fontSize.regular_plus,
+    fontSize: fontSizes.regular_plus,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   textRegular: {
-    fontSize: fontSize.regular,
+    fontSize: fontSizes.regular,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   textSmallPlus: {
-    fontSize: fontSize.small_plus,
+    fontSize: fontSizes.small_plus,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   textSmall: {
-    fontSize: fontSize.small,
+    fontSize: fontSizes.small,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   textTiny: {
-    fontSize: fontSize.tiny,
+    fontSize: fontSizes.tiny,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   xTinyText: {
-    fontSize: fontSize.xTiny,
+    fontSize: fontSizes.xTiny,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   xxTinyText: {
-    fontSize: fontSize.xxTiny,
+    fontSize: fontSizes.xxTiny,
     color: colors.appTextColor1,
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   inputContainerUnderLined: {
     marginHorizontal: width(5),
@@ -117,8 +117,8 @@ export const appStyles = StyleSheet.create({
     height: sizes.inputHeight,
     //width: width(80),
     color: colors.appTextColor3,
-    fontFamily: fontFamily.appTextRegular,
-    fontSize: fontSize.medium
+    fontFamily: appFonts.appTextRegular,
+    fontSize: fontSizes.medium
   },
   inputFieldBorderd: {
     marginHorizontal: width(5),
@@ -126,7 +126,7 @@ export const appStyles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: colors.appColor1,
     fontSize: totalSize(1.75),
-    fontFamily: fontFamily.appTextRegular,
+    fontFamily: appFonts.appTextRegular,
     borderRadius: 2.5
   },
   inputFieldColored: {
@@ -169,7 +169,7 @@ export const appStyles = StyleSheet.create({
   buttonText: {
     fontSize: totalSize(2),
     color: '#000000',
-    fontFamily: fontFamily.appTextMedium
+    fontFamily: appFonts.appTextMedium
   },
   compContainer: {
     marginHorizontal: width(5),
@@ -191,7 +191,7 @@ export const appStyles = StyleSheet.create({
   headerTitleStyle: {
     fontSize: totalSize(2),
     color: colors.appTextColor3,
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   cardView: {
     marginHorizontal: width(5),
@@ -314,35 +314,35 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'center'
   },
   fontExtraBold: {
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   fontBold: {
-    fontFamily: fontFamily.appTextBold
+    fontFamily: appFonts.appTextBold
   },
   fontMedium: {
-    fontFamily: fontFamily.appTextMedium
+    fontFamily: appFonts.appTextMedium
   },
   fontRegular: {
-    fontFamily: fontFamily.appTextRegular
+    fontFamily: appFonts.appTextRegular
   },
   fontLight: {
-    fontFamily: fontFamily.appTextLight
+    fontFamily: appFonts.appTextLight
   },
   ButtonRegular: {
-    fontSize: fontSize.regular,
+    fontSize: fontSizes.regular,
     color: '#000000',
-    fontFamily: fontFamily.appTextMedium
+    fontFamily: appFonts.appTextMedium
   },
   ButtonMedium: {
-    fontSize: fontSize.medium,
+    fontSize: fontSizes.medium,
     color: '#000000',
-    fontFamily: fontFamily.appTextBold,
+    fontFamily: appFonts.appTextBold,
     //letterSpacing:totalSize(5)
   },
   ButtonTextLarge: {
     fontSize: totalSize(2.2),
     color: '#000000',
-    fontFamily: fontFamily.appTextMedium,
+    fontFamily: appFonts.appTextMedium,
     letterSpacing: totalSize(0.25)
   },
   tabBarStyle: {

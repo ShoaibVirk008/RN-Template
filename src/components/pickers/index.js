@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, fontSize, fontFamily, sizes, appIcons, appStyles, HelpingMethods } from '../../services';
+import { colors, fontSizes, appFonts, sizes, appIcons, appStyles, HelpingMethods } from '../../services';
 import RNPickerSelect from 'react-native-picker-select'
 import * as Icons from '../icons';
 import * as TextInputs from '../textInput';
@@ -24,10 +24,10 @@ export const Primary = ({
     }
 
     const [titleMarginBottom] = useState(new Animated.Value(value ? height(6) : 0))
-    //const [titleSize] = useState(new Animated.Value(fontSize.regular))
+    //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
     const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
-    //const [titleSize, setTitleSize] = useState(fontSize.input)
+    //const [titleSize, setTitleSize] = useState(fontSizes.input)
     const moveTitleUp = () => {
         Animated.timing(titleMarginBottom, {
             toValue: height(6),
@@ -140,7 +140,7 @@ export const Primary = ({
 
                             tintColor={colors.error}
                             iconSize={sizes.icons.tiny}
-                            textStyle={[{ fontSize: fontSize.small }]}
+                            textStyle={[{ fontSize: fontSizes.small }]}
                         />
                     </Wrapper>
                     :
@@ -152,8 +152,8 @@ export const Primary = ({
 
 const PickerPrimaryStyles = StyleSheet.create({
     inputIOS: {
-        fontSize: fontSize.medium,
-        fontFamily: fontFamily.appTextRegular,
+        fontSize: fontSizes.medium,
+        fontFamily: appFonts.appTextRegular,
         //paddingVertical: height(2),
         height: sizes.inputHeight,
         paddingHorizontal: 0,
@@ -166,8 +166,8 @@ const PickerPrimaryStyles = StyleSheet.create({
         //paddingRight: 30, // to ensure the text is never behind the icon
     },
     inputAndroid: {
-        fontSize: fontSize.medium,
-        fontFamily: fontFamily.appTextRegular,
+        fontSize: fontSizes.medium,
+        fontFamily: appFonts.appTextRegular,
         //paddingVertical: height(2),
         height: sizes.inputHeight,
         paddingHorizontal: 0,

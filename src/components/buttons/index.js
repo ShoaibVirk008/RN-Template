@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, fontSize, sizes } from '../../services';
+import { colors, appStyles, fontSizes, sizes } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -128,7 +128,7 @@ export const BorderedSmall = ({ text, onPress, buttonStyle, rowReverse, textStyl
                         :
                         null
                 }
-                <Text isButtonRegular style={[{ color: tintColor ? tintColor : colors.appColor1, fontSize: fontSize.regular }, textStyle]}>{text}</Text>
+                <Text isButtonRegular style={[{ color: tintColor ? tintColor : colors.appColor1, fontSize: fontSizes.regular }, textStyle]}>{text}</Text>
             </Wrapper>
         </TouchableOpacity>
     );

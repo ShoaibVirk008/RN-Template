@@ -17,7 +17,7 @@ const appIcons = {
     security: require('../../../assets/icons/security.png')
 }
 
-const fontFamily = {
+const appFonts = {
     // appTextLight: 'Roboto-Light',
     // appTextRegular: 'Roboto-Regular',
     // appTextMedium: 'Roboto-Medium',
@@ -28,4 +28,4 @@ const fontFamily = {
     appTextBold: 'Montserrat-Bold',
   }
 
-export { appImages, appIcons, appSvgs,fontFamily }
+export { appImages, appIcons, appSvgs,appFonts }

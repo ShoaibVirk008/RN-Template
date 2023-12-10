@@ -82,8 +82,8 @@
 		<string>Montserrat-Regular.ttf</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Oprimaze want to access to your photo library.</string>
+	<string>$(PRODUCT_NAME) want to access to your photo library.</string>
 	<key>NSCameraUsageDescription</key>
-    <string>Oprimaze needs access to your Camera.</string>
+    <string>$(PRODUCT_NAME) needs access to your Camera.</string>
 </dict>
 </plist>
