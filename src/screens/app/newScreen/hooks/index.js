@@ -1,3 +1,3 @@
-export function useHooks() {
+export function useHooks(props) {
     return {}
 }
