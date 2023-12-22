@@ -14,7 +14,8 @@ export const Primary = ({
     onDonePress, containerStyle, data, title, onChange,
     placeholder, error, value, itemKey,
     left, customIconLeft, iconSizeLeft, iconColorLeft,
-    iconStyleLeft, iconNameLeft, mainContainerStyle, iconTypeLeft
+    iconStyleLeft, iconNameLeft, mainContainerStyle, iconTypeLeft,
+    titleStatic
 }) => {
 
     const placeholderObject = {
@@ -25,12 +26,13 @@ export const Primary = ({
 
     const [titleMarginBottom] = useState(new Animated.Value(value ? height(6) : 0))
     //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
-    const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
+    const detaultTitleMarginBottom=height(4.5)
+    const FocusedTitleMarginBottom = detaultTitleMarginBottom
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
     //const [titleSize, setTitleSize] = useState(fontSizes.input)
     const moveTitleUp = () => {
         Animated.timing(titleMarginBottom, {
-            toValue: height(6),
+            toValue: detaultTitleMarginBottom,
             duration: 250,
             speed: 50,
             useNativeDriver: false
@@ -55,6 +57,15 @@ export const Primary = ({
                 <InputTitle>{title}</InputTitle>
             </ComponentWrapper>
             <Spacer height={sizes.TinyMargin} /> */}
+            {
+                    titleStatic ?
+                        <>
+                            <Text isInputTitle>{titleStatic}</Text>
+                        </>
+
+                        :
+                        null
+                }
             <Wrapper style={[appStyles.inputContainerUnderLined, {
                 //borderRadius: sizes.b,
                 borderBottomWidth: 1,
@@ -153,7 +164,7 @@ export const Primary = ({
 const PickerPrimaryStyles = StyleSheet.create({
     inputIOS: {
         fontSize: fontSizes.medium,
-        fontFamily: appFonts.appTextRegular,
+        fontFamily: appFonts.regular,
         //paddingVertical: height(2),
         height: sizes.inputHeight,
         paddingHorizontal: 0,
@@ -167,7 +178,7 @@ const PickerPrimaryStyles = StyleSheet.create({
     },
     inputAndroid: {
         fontSize: fontSizes.medium,
-        fontFamily: appFonts.appTextRegular,
+        fontFamily: appFonts.regular,
         //paddingVertical: height(2),
         height: sizes.inputHeight,
         paddingHorizontal: 0,
@@ -178,6 +189,7 @@ const PickerPrimaryStyles = StyleSheet.create({
         //borderRadius: 5,
         color: 'black',
         //paddingRight: 30, // to ensure the text is never behind the icon
+        //backgroundColor:'red'
     },
 });
 

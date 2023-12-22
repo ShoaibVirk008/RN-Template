@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, fontSizes, responsiveHeight } from '../../services';
+import { colors, appStyles, sizes, fontSizes, responsiveHeight, useTheme } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -190,14 +190,17 @@ const Underlined = ({
     onChangeText, secureTextEntry, value, containerStyle, inputContainerStyle,
     inputStyle, titleStatic, autoCapitalize, children, inputBorderStyle }) => {
 
+
+        const {isDarkTheme,theme}=useTheme()
     const [titleMarginBottom] = useState(new Animated.Value(0))
     //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
-    const FocusedTitleMarginBottom = Platform.OS === 'ios' ? height(5) : height(5)
+    const defaultTitleBottomMargin=height(4.5)
+    const FocusedTitleMarginBottom = defaultTitleBottomMargin
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
     //const [titleSize, setTitleSize] = useState(fontSizes.input)
     const moveTitleUp = () => {
         Animated.timing(titleMarginBottom, {
-            toValue: height(5),
+            toValue:defaultTitleBottomMargin,
             duration: 250,
             speed: 50,
             useNativeDriver: false
@@ -234,6 +237,7 @@ const Underlined = ({
             paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
         }
     })
+    const defaultTintColor=theme.appTextColor1
     return (
         <TouchableOpacity disabled={!onPress} activeOpacity={1} onPress={onPress}>
             <Wrapper marginHorizontalBase style={[containerStyle]}>
@@ -249,7 +253,7 @@ const Underlined = ({
                 <Wrapper style={[appStyles.inputContainerUnderLined, {
                     //borderRadius: sizes.b,
                     borderBottomWidth: 1,
-                    borderBottomColor: colors.appTextColor4,
+                    borderBottomColor: defaultTintColor,
                     marginHorizontal: 0
                 }, inputBorderStyle]}>
                     {
@@ -268,12 +272,13 @@ const Underlined = ({
                                     :
                                     null
                     }
-                    <View style={[{ flex: 7, justifyContent: 'center' }, inputContainerStyle]}>
+                    <Wrapper style={[{ flex: 7, justifyContent: 'center' }, inputContainerStyle]}>
                         <Wrapper isAbsolute style={{ top: 0, bottom: 0, ...appStyles.center, backgroundColor: 'transparent', }}>
                             <Wrapper style={{ marginBottom: value ? FocusedTitleMarginBottom : titleMarginBottom }}>
                                 <Text isInputTitle style={[titleStyle, {}]}>{title}</Text>
                             </Wrapper>
                         </Wrapper>
+                        <Wrapper style={{}}>
                         {
                             children ? children :
                                 onPress ?
@@ -311,10 +316,11 @@ const Underlined = ({
                                         multiline={multiline}
                                         placeholderTextColor={placeholderTextColor ? placeholderTextColor : colors.appTextColor4}
                                         secureTextEntry={secureTextEntry}
-                                        style={[appStyles.inputField, { width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
+                                        style={[appStyles.inputField, { color:defaultTintColor,width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
                                     />
                         }
-                    </View>
+                        </Wrapper>
+                    </Wrapper>
 
                     {
                         right ?
