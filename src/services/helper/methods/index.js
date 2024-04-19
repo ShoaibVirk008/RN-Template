@@ -1,5 +1,7 @@
 import { UIManager, LayoutAnimation, Platform } from "react-native";
 import { appointmentStatuses, orderStatuses, rolesTypes } from "../data";
+import firestore from '@react-native-firebase/firestore'
+
 // import { faker } from '@faker-js/faker'
 import { colors } from "../../utilities";
 import store from "../../../store";
@@ -199,3 +201,8 @@ export const getUserRole = (type) => {
     const isProfessionalDietitianRole = type === rolesTypes.professional_dietitian
     return { isMaintainWeightRole, isWeightLossRole, isProfessionalDietitianRole }
 }
+
+export const getFirestoreDate = () => {
+    return new Date(firestore.Timestamp.now().seconds * 1000)
+}
+

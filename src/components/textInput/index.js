@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, fontSizes, responsiveHeight, useTheme } from '../../services';
+import { colors, appStyles, sizes, fontSizes, responsiveHeight } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -191,7 +191,6 @@ const Underlined = ({
     inputStyle, titleStatic, autoCapitalize, children, inputBorderStyle }) => {
 
 
-        const {isDarkTheme,theme}=useTheme()
     const [titleMarginBottom] = useState(new Animated.Value(0))
     //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
     const defaultTitleBottomMargin=height(4.5)
@@ -237,7 +236,7 @@ const Underlined = ({
             paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
         }
     })
-    const defaultTintColor=theme.appTextColor1
+    const defaultTintColor=colors.appTextColor1
     return (
         <TouchableOpacity disabled={!onPress} activeOpacity={1} onPress={onPress}>
             <Wrapper marginHorizontalBase style={[containerStyle]}>
