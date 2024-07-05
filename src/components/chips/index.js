@@ -1,6 +1,6 @@
 import React from 'react'
-import { appStyles, colors, sizes } from "../../services"
-import { totalSize } from "react-native-dimension"
+import { appStyles, colors, sizes,responsiveHeight,responsiveWidth,responsiveFontSize } from "../../services"
+
 import * as Buttons from '../buttons'
 import Wrapper from '../wrapper'
 
@@ -15,7 +15,7 @@ export const Primary = ({ data, onPress, disabled, containerStyle, buttonStyle, 
                             disabled={!onPress || disabled}
                             iconName={onPress && "close"}
                             //iconType="ionicon"
-                            iconSize={totalSize(2)}
+                            iconSize={responsiveFontSize(2)}
                             iconColor={colors.appTextColor1}
                             onPress={() => onPress(item, index)}
                             direction="row-reverse"

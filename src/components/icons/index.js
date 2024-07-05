@@ -1,18 +1,17 @@
 import React from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Pressable } from 'react-native'
 import { Badge, Icon } from '@rneui/base';
-import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, appSvgs } from '../../services';
+import { colors, appStyles, sizes, appSvgs,responsiveHeight,responsiveWidth } from '../../services';
 import Wrapper from '../wrapper';
 import Text from '../text';
 
 export const Back = ({ size, onPress, style, color }) => {
-    const defaultSize = size || totalSize(2.5)
+    const defaultSize = size || responsiveWidth(5)
     return (
         // <Icon
         //     name="chevron-left"
         //     type="feather"
-        //     size={size ? size : totalSize(3)}
+        //     size={size ? size : responsiveWidth(3)}
         //     //raised
         //     // reverse
         //     // reverseColor={colors.appTextColor6}
@@ -22,7 +21,7 @@ export const Back = ({ size, onPress, style, color }) => {
         // />
         <Svg
             svg={appSvgs.arrow_left}
-            size={size ? size : totalSize(2)}
+            size={defaultSize}
             onPress={onPress}
             color={color}
         />
@@ -37,7 +36,7 @@ export const Button = ({
     text, textStyle, textColor, badgeStyle
 }) => {
     const SvgIcon = svgIcon
-    const defaultButtonsize = totalSize(5)
+    const defaultButtonsize = responsiveWidth(5)
     const _buttonSize = buttonSize ? buttonSize : defaultButtonsize
     const defaulIconSize = iconSize ? iconSize : sizes.icons.large
     return (
@@ -103,7 +102,7 @@ export const Button = ({
     );
 }
 export const Custom = ({ icon, size, animation, duration, color, onPress, containerStyle }) => {
-    const defaulSize = totalSize(5)
+    const defaulSize = responsiveWidth(5)
     return (
         <Wrapper animation={animation} duration={duration} style={containerStyle}>
             <TouchableOpacity disabled={!onPress} onPress={onPress}>
@@ -120,7 +119,7 @@ export const Custom = ({ icon, size, animation, duration, color, onPress, contai
 
 export const WithText = ({ text, containerStyle, title, customIcon, onPress, tintColor, svgIcon, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle, textContainerStyle }) => {
     const SvgIcon = svgIcon
-    const defaulIconSize = iconSize ? iconSize : totalSize(2)
+    const defaulIconSize = iconSize ? iconSize : responsiveWidth(2)
     return (
         <TouchableOpacity disabled={!onPress} activeOpacity={1} onPress={onPress} style={[{ flexDirection: direction ? direction : 'row', alignItems: 'center', }, containerStyle]}>
             {
@@ -137,7 +136,7 @@ export const WithText = ({ text, containerStyle, title, customIcon, onPress, tin
                         :
                         <Icon name={iconName ? iconName : 'email'} type={iconType ? iconType : 'material-community'} size={defaulIconSize} color={tintColor ? tintColor : colors.appTextColor1} iconStyle={iconStyle} />
             }
-            <Wrapper style={[direction === 'column' ? { marginVertical: height(1.5) } : { marginHorizontal: width(2) }, textContainerStyle]}>
+            <Wrapper style={[direction === 'column' ? { marginVertical: responsiveHeight(1.5) } : { marginHorizontal: responsiveWidth(2) }, textContainerStyle]}>
                 {
                     title ?
                         <Text isRegular isBoldFont style={[{ color: tintColor ? tintColor : colors.appTextColor1, marginBottom: 5 }, titleStyle]}>{title}</Text>
@@ -156,7 +155,7 @@ export const WithText = ({ text, containerStyle, title, customIcon, onPress, tin
 }
 export const Svg = ({ svg, onPress, size }) => {
     const Svg = svg
-    const defaultSize = size || totalSize(2.5)
+    const defaultSize = size || responsiveWidth(2.5)
     return (
         <Pressable onPress={onPress} disabled={!onPress} >
             <Svg
@@ -169,8 +168,8 @@ export const Svg = ({ svg, onPress, size }) => {
 
 const styles = StyleSheet.create({
     IconButtonContainer: {
-        height: totalSize(5),
-        width: totalSize(5),
+        height: responsiveWidth(5),
+        width: responsiveWidth(5),
         backgroundColor: colors.appColor1,
         borderRadius: 10,
         ...appStyles.center,

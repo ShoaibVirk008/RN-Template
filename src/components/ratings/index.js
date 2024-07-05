@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { totalSize } from 'react-native-dimension';
 import Wrapper from '../wrapper'
-import {  colors } from '../../services';
+import {  colors,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import { Icon } from '@rneui/base';
 
 export const Primary = ({ value, iconSize, iconStyle, onPressIcon, emptyIconName, fillIconName, emptyIconColor, fillIconColor, iconType, disabled }) => {
@@ -14,7 +13,7 @@ export const Primary = ({ value, iconSize, iconStyle, onPressIcon, emptyIconName
                     ratings.map((item, index) => {
                         const defaultIconName = item <= value ? fillIconName ? fillIconName : 'star' : emptyIconName ? emptyIconName : 'star'
                         const defaultIconColor = item <= value ? fillIconColor ? fillIconColor : colors.rating : emptyIconColor || colors.rating+'40'
-                        const defaultIconSize=iconSize ? iconSize : totalSize(2)
+                        const defaultIconSize=iconSize ? iconSize : responsiveFontSize(2)
                         return (
                             <Icon
                             key={index}

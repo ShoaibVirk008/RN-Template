@@ -1,7 +1,6 @@
 import { Dimensions, Platform, StatusBar } from 'react-native'
-import { totalSize } from 'react-native-dimension'
 import DeviceInfo from 'react-native-device-info';
-import { responsiveFontSize } from '../responsive';
+import { responsiveFontSize,responsiveHeight,responsiveWidth } from '../responsive';
 
 const { width, height } = Dimensions.get('window')
 

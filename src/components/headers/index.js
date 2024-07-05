@@ -5,7 +5,6 @@ import { goBack } from '../../navigation/rootNavigation'
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
-import { height, totalSize } from 'react-native-dimension'
 import { Pressable } from 'react-native';
 import Spacer from '../spacer';
 import * as StatusBars from '../statusBars';
@@ -47,7 +46,7 @@ export const Primary = ({
         <Wrapper style={[
             appStyles.headerStyle,
             { height: headerHeight,
-             backgroundColor: defaultBackgroundColor, borderBottomWidth: 0, paddingTop: statusBarHeight, paddingBottom: height(1) }, shadow && appStyles.shadowLight, containerStyle]}>
+             backgroundColor: defaultBackgroundColor, borderBottomWidth: 0, paddingTop: statusBarHeight, paddingBottom: responsiveHeight(1) }, shadow && appStyles.shadowLight, containerStyle]}>
             <StatusBars.Light />
             <Wrapper flex={1} flexDirectionRow alignItemsCenter style={{}}>
                 {/* <Wrapper isAbsolute
@@ -55,7 +54,7 @@ export const Primary = ({
                         { right: 0, left: 0, backgroundColor: 'green', },
                         alignTitleLeft ?
                             {
-                                paddingLeft: width(17.5),
+                                paddingLeft: responsiveWidth(17.5),
                                 paddingRight: sizes.marginHorizontal
                             }
                             :

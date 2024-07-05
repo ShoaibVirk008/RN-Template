@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
-import { totalSize, height, width } from 'react-native-dimension'
 import { sizes,fontSizes } from '../sizes'
 import { colors } from '../colors'
 import { appFonts } from '../assets'
+import{responsiveHeight,responsiveWidth,responsiveFontSize} from '../responsive'
 
 export const appStyles = StyleSheet.create({
   bgContainer: {
@@ -90,7 +90,7 @@ export const appStyles = StyleSheet.create({
     fontFamily: appFonts.appTextRegular
   },
   inputContainerUnderLined: {
-    marginHorizontal: width(5),
+    marginHorizontal: responsiveWidth(5),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -98,7 +98,7 @@ export const appStyles = StyleSheet.create({
     borderBottomColor: '#FFFF'
   },
   inputContainerBorderd: {
-    marginHorizontal: width(5),
+    marginHorizontal: responsiveWidth(5),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -106,7 +106,7 @@ export const appStyles = StyleSheet.create({
     borderColor: colors.appColor1
   },
   inputContainerColored: {
-    marginHorizontal: width(5),
+    marginHorizontal: responsiveWidth(5),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -115,24 +115,24 @@ export const appStyles = StyleSheet.create({
   },
   inputField: {
     height: sizes.inputHeight,
-    //width: width(80),
+    //width: responsiveWidth(80),
     color: colors.appTextColor3,
     fontFamily: appFonts.appTextRegular,
     fontSize: fontSizes.medium
   },
   inputFieldBorderd: {
-    marginHorizontal: width(5),
-    height: height(7),
+    marginHorizontal: responsiveWidth(5),
+    height: responsiveHeight(7),
     borderWidth: 0.5,
     borderColor: colors.appColor1,
-    fontSize: totalSize(1.75),
+    fontSize: responsiveFontSize(1.75),
     fontFamily: appFonts.appTextRegular,
     borderRadius: 2.5
   },
   inputFieldColored: {
-    marginHorizontal: width(5),
-    height: height(7),
-    fontSize: totalSize(1.75),
+    marginHorizontal: responsiveWidth(5),
+    height: responsiveHeight(7),
+    fontSize: responsiveFontSize(1.75),
     shadowOffset: { width: 5, height: 5 },
     shadowColor: 'black',
     shadowOpacity: 0.25,
@@ -142,8 +142,8 @@ export const appStyles = StyleSheet.create({
   },
 
   buttonBorderd: {
-    marginHorizontal: width(5),
-    height: height(8),
+    marginHorizontal: responsiveWidth(5),
+    height: responsiveHeight(8),
     borderRadius: 2.5,
     borderWidth: 1,
     borderColor: colors.appColor1,
@@ -151,36 +151,36 @@ export const appStyles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttonColord: {
-    marginHorizontal: width(5),
-    height: height(8),
+    marginHorizontal: responsiveWidth(5),
+    height: responsiveHeight(8),
     borderRadius: 2.5,
     backgroundColor: colors.appColor1,
     alignItems: 'center',
     justifyContent: 'center'
   },
   SocialButtonColord: {
-    height: height(8),
-    marginHorizontal: width(5),
+    height: responsiveHeight(8),
+    marginHorizontal: responsiveWidth(5),
     borderRadius: 2.5,
     backgroundColor: colors.facebook,
     //  alignItems: 'center',
     //  justifyContent: 'center'
   },
   buttonText: {
-    fontSize: totalSize(2),
+    fontSize: responsiveFontSize(2),
     color: '#000000',
     fontFamily: appFonts.appTextMedium
   },
   compContainer: {
-    marginHorizontal: width(5),
-    marginVertical: height(2.5)
+    marginHorizontal: responsiveWidth(5),
+    marginVertical: responsiveHeight(2.5)
   },
   rowCompContainer: {
-    marginHorizontal: width(5),
+    marginHorizontal: responsiveWidth(5),
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: height(2.5)
+    marginVertical: responsiveHeight(2.5)
   },
   headerStyle: {
     backgroundColor: colors.appBgColor1,
@@ -189,12 +189,12 @@ export const appStyles = StyleSheet.create({
     //height: sizes.headerHeight
   },
   headerTitleStyle: {
-    fontSize: totalSize(2),
+    fontSize: responsiveFontSize(2),
     color: colors.appTextColor3,
     fontFamily: appFonts.appTextBold
   },
   cardView: {
-    marginHorizontal: width(5),
+    marginHorizontal: responsiveWidth(5),
     borderRadius: sizes.cardRadius,
     backgroundColor: '#FFFF',
     shadowColor: "#000",
@@ -337,13 +337,13 @@ export const appStyles = StyleSheet.create({
     fontSize: fontSizes.medium,
     color: '#000000',
     fontFamily: appFonts.appTextBold,
-    //letterSpacing:totalSize(5)
+    //letterSpacing:responsiveFontSize(5)
   },
   ButtonTextLarge: {
-    fontSize: totalSize(2.2),
+    fontSize: responsiveFontSize(2.2),
     color: '#000000',
     fontFamily: appFonts.appTextMedium,
-    letterSpacing: totalSize(0.25)
+    letterSpacing: responsiveFontSize(0.25)
   },
   tabBarStyle: {
     height: sizes.tabBarHeight,
@@ -351,7 +351,7 @@ export const appStyles = StyleSheet.create({
     //justifyContent: 'center',
     borderTopLeftRadius: sizes.cardRadius,
    borderTopRightRadius: sizes.cardRadius,
-    // paddingTop: height(1),
+    // paddingTop: responsiveHeight(1),
     //borderRadius: sizes.buttonRadius,
     backgroundColor: colors.appColor1,
     //paddingVertical:sizes.tabBarHeight/5,
@@ -360,7 +360,7 @@ export const appStyles = StyleSheet.create({
     right: 0,
     bottom: 0,
     //marginHorizontal: sizes.marginHorizontal,
-    //marginBottom: Platform.OS === 'ios' ? height(2.5) : height(1.5),
+    //marginBottom: Platform.OS === 'ios' ? responsiveHeight(2.5) : responsiveHeight(1.5),
     //paddingTop: sizes.tabBarHeight / 7,
     paddingBottom: sizes.tabBarHeight / 4,
     shadowColor: "#000",

@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
-import { height, totalSize, width } from 'react-native-dimension';
-import { colors, fontSizes, appFonts, sizes, appIcons, appStyles, HelpingMethods } from '../../services';
+import { colors, fontSizes, appFonts, sizes, appIcons, appStyles, HelpingMethods,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import RNPickerSelect from 'react-native-picker-select'
 import * as Icons from '../icons';
 import * as TextInputs from '../textInput';
@@ -24,9 +23,9 @@ export const Primary = ({
         color: '#909090',
     }
 
-    const [titleMarginBottom] = useState(new Animated.Value(value ? height(6) : 0))
+    const [titleMarginBottom] = useState(new Animated.Value(value ? responsiveHeight(6) : 0))
     //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
-    const detaultTitleMarginBottom=height(4.5)
+    const detaultTitleMarginBottom=responsiveHeight(4.5)
     const FocusedTitleMarginBottom = detaultTitleMarginBottom
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
     //const [titleSize, setTitleSize] = useState(fontSizes.input)
@@ -109,29 +108,29 @@ export const Primary = ({
                         //  pickerProps={{ mode: 'dropdown',overflow: 'hidden', style: { overflow: 'hidden' } }}
                         // pickerProps={{ style: { height: 214, overflow: 'hidden' } }}
                         style={{
-                            //width: width(100),
+                            //width: responsiveWidth(100),
                             ...{
                                 //...PickerPrimaryStyles,
                                 inputIOS: {
                                     ...PickerPrimaryStyles.inputIOS,
-                                    paddingTop: title ? height(1.5) : null,
+                                    paddingTop: title ? responsiveHeight(1.5) : null,
                                 },
                                 inputAndroid: {
                                     ...PickerPrimaryStyles.inputAndroid,
-                                    paddingTop: title ? height(2.5) : null,
+                                    paddingTop: title ? responsiveHeight(2.5) : null,
                                 }
                             },
-                            //paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
+                            //paddingTop: title ? Platform.OS === 'ios' ? responsiveHeight(1.5) : responsiveHeight(2.5) : null,
                             iconContainer: {
-                                top: height(3.5),
+                                top: responsiveHeight(3.5),
                                 right: 0,
                             },
                         }}
                         Icon={() =>
-                            <Icon name='chevron-thin-down' type='entypo' size={totalSize(1.5)} color={colors.appColor1} />
+                            <Icon name='chevron-thin-down' type='entypo' size={responsiveFontSize(1.5)} color={colors.appColor1} />
                             // <CustomIcon
                             //     icon={appIcons.dropdown_normal}
-                            //     size={totalSize(2)}
+                            //     size={responsiveFontSize(2)}
                             // />
                         }
                     />
@@ -165,7 +164,7 @@ const PickerPrimaryStyles = StyleSheet.create({
     inputIOS: {
         fontSize: fontSizes.medium,
         fontFamily: appFonts.regular,
-        //paddingVertical: height(2),
+        //paddingVertical: responsiveHeight(2),
         height: sizes.inputHeight,
         paddingHorizontal: 0,
         marginHorizontal: 0,
@@ -179,7 +178,7 @@ const PickerPrimaryStyles = StyleSheet.create({
     inputAndroid: {
         fontSize: fontSizes.medium,
         fontFamily: appFonts.regular,
-        //paddingVertical: height(2),
+        //paddingVertical: responsiveHeight(2),
         height: sizes.inputHeight,
         paddingHorizontal: 0,
         marginHorizontal: 0,
@@ -256,7 +255,7 @@ export function Searchable({ placeholder, error, titleStyle, containerStyle, ico
                 error={error}
                 right={
                     right ? right :
-                        <Icon name="caret-down-sharp" type="ionicon" size={totalSize(1.5)} color={[iconColor, colors.appColor1]} />
+                        <Icon name="caret-down-sharp" type="ionicon" size={responsiveFontSize(1.5)} color={[iconColor, colors.appColor1]} />
                 }
                 left={left}
             />

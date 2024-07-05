@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
-import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes, fontSizes, responsiveHeight } from '../../services';
+import { colors, appStyles, sizes, fontSizes, responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -193,7 +192,7 @@ const Underlined = ({
 
     const [titleMarginBottom] = useState(new Animated.Value(0))
     //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
-    const defaultTitleBottomMargin=height(4.5)
+    const defaultTitleBottomMargin=responsiveHeight(4.5)
     const FocusedTitleMarginBottom = defaultTitleBottomMargin
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
     //const [titleSize, setTitleSize] = useState(fontSizes.input)
@@ -233,7 +232,7 @@ const Underlined = ({
     const styles = StyleSheet.create({
         iconContainer: {
             alignItems: 'flex-end',
-            paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
+            paddingTop: title ? Platform.OS === 'ios' ? responsiveHeight(1.5) : responsiveHeight(2.5) : null,
         }
     })
     const defaultTintColor=colors.appTextColor1
@@ -285,7 +284,7 @@ const Underlined = ({
                                         {
                                             value ?
                                                 <Wrapper>
-                                                    <Spacer height={title ? Platform.OS === 'ios' ? height(1.25) : height(1.25) : 0} />
+                                                    <Spacer height={title ? Platform.OS === 'ios' ? responsiveHeight(1.25) : responsiveHeight(1.25) : 0} />
                                                     <Text isMedium numberOfLines={1}>{value}</Text>
                                                 </Wrapper>
                                                 :
@@ -315,7 +314,7 @@ const Underlined = ({
                                         multiline={multiline}
                                         placeholderTextColor={placeholderTextColor ? placeholderTextColor : colors.appTextColor4}
                                         secureTextEntry={secureTextEntry}
-                                        style={[appStyles.inputField, { color:defaultTintColor,width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
+                                        style={[appStyles.inputField, { color:defaultTintColor,width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? responsiveHeight(1.5) : responsiveHeight(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
                                     />
                         }
                         </Wrapper>

@@ -9,8 +9,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import { StyleSheet } from 'react-native';
-import { height, totalSize, width } from 'react-native-dimension';
-import { appStyles, colors, sizes } from '../../services';
+
+import { appStyles, colors, sizes,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import * as Icons from '../icons';
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -95,7 +95,7 @@ export default function AnimatedGroupButton({
     }
   }
 
-  const defaultIconSize = totalSize(2)
+  const defaultIconSize = responsiveFontSize(2)
   const defaultActiveTintColor = activeTintColor ? activeTintColor : appStyles.textPrimaryColor.color
   const defaultInactiveTintColor = inActiveTintColor ? inActiveTintColor : colors.appTextColor5
 
@@ -270,11 +270,11 @@ const styles = StyleSheet.create({
   },
   animatedGroupButtonInactivatedButton: {
     borderRadius: sizes.buttonRadius,
-    // height: height(5),
-    //width: width(30),
+    // height: responsiveHeight(5),
+    //width: responsiveWidth(30),
     paddingVertical: sizes.marginVertical / 1.5,
     paddingHorizontal: sizes.marginHorizontal,
-    marginHorizontal: width(1),
+    marginHorizontal: responsiveWidth(1),
     backgroundColor: colors.appBgColor3,
     ...appStyles.center,
   },

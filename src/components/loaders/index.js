@@ -1,8 +1,7 @@
 import React from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Icon } from '@rneui/base';
-import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles, sizes } from '../../services';
+import { colors, appStyles, sizes,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import {
     BallIndicator,
     BarIndicator,

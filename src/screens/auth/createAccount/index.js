@@ -1,6 +1,5 @@
 import React, { Component, useState } from 'react';
 import { View, } from 'react-native';
-import { totalSize } from 'react-native-dimension';
 import { Logos, Toasts, Icons, Text, TextInputs, Buttons, ScrollViews, Wrapper, Spacer, Headers, CheckBoxes } from '../../../components';
 import { appStyles, colors, responsiveFontSize, responsiveHeight, routes, appSvgs, responsiveWidth, sizes } from '../../../services';
 import { useHooks } from './hooks';

@@ -1,12 +1,11 @@
 import React from 'react'
 import {Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes } from 'react-native'
 import { Icon } from '@rneui/base';
-import { height, totalSize, width } from 'react-native-dimension';
-import { colors, sizes, appStyles } from '../../services';
+import { colors, sizes, appStyles,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import Wrapper from '../wrapper';
 
 export const Round = ({ style, size, source }) => {
-    const defaultSize = totalSize(5)
+    const defaultSize = responsiveFontSize(5)
     return (
         <Image
             source={source}
@@ -16,7 +15,7 @@ export const Round = ({ style, size, source }) => {
 }
 
 export const SqareRound = ({ style, size, source }) => {
-    const defaultSize = totalSize(5)
+    const defaultSize = responsiveFontSize(5)
     return (
         <Image
             source={source}
@@ -49,8 +48,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.appBgColor1
     },
     ImageProfile: {
-        width: totalSize(15),
-        height: totalSize(15),
+        width: responsiveFontSize(15),
+        height: responsiveFontSize(15),
         borderRadius: 100,
         borderWidth: 5,
         borderColor: colors.appBgColor1,
@@ -61,8 +60,8 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 25
     },
     ImageCollectionItem: {
-        width: width(32.5),
-        height: height(20),
+        width: responsiveWidth(32.5),
+        height: responsiveHeight(20),
         borderRadius: 15,
     }
 })

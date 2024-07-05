@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes, FlatList, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
-import { height, totalSize, width } from 'react-native-dimension';
-import { colors, sizes, appStyles, useKeyboardStatus } from '../../services';
+import { colors, sizes, appStyles, useKeyboardStatus,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import Modal from 'react-native-modal'
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -32,7 +31,7 @@ import LinearGradient from 'react-native-linear-gradient';
 //                             <TouchableOpacity onPress={toggleModal}>
 //                                 <Lines.Horizontal
 //                                     height={4}
-//                                     width={width(15)}
+//                                     width={responsiveWidth(15)}
 //                                     style={{ borderRadius: 5 }}
 //                                     color={colors.appBgColor3}
 //                                 />
@@ -59,7 +58,7 @@ export const Swipable = ({
     const keyboardVisible = useKeyboardStatus()
 
 
-    const defaultTopMargin = keyboardVisible ? height(12) : topMargin ? (Platform.OS === 'ios' ? topMargin : topMargin + height(5)) : height(12)
+    const defaultTopMargin = keyboardVisible ? responsiveHeight(12) : topMargin ? (Platform.OS === 'ios' ? topMargin : topMargin + responsiveHeight(5)) : responsiveHeight(12)
     return (
         <Modal
             isVisible={visible} // Comment on video User
@@ -115,7 +114,7 @@ export const Swipable = ({
                                                 <Icon
                                                     name="x"
                                                     type="feather"
-                                                    size={totalSize(2.5)}
+                                                    size={responsiveFontSize(2.5)}
                                                     color={colors.appTextColor1}
                                                     onPress={toggle}
                                                 />
@@ -156,8 +155,8 @@ export const PopupPrimary = ({
     // manage keyboard
     const keyboardVisible = useKeyboardStatus()
 
-    const defaultTopMargin = Platform.OS === 'ios' ? height(50) : height(40)
-    const customTopMargin = keyboardVisible ? height(10) : topMargin ? Platform.OS === 'ios' ? topMargin : topMargin - height(10) : defaultTopMargin
+    const defaultTopMargin = Platform.OS === 'ios' ? responsiveHeight(50) : responsiveHeight(40)
+    const customTopMargin = keyboardVisible ? responsiveHeight(10) : topMargin ? Platform.OS === 'ios' ? topMargin : topMargin - responsiveHeight(10) : defaultTopMargin
     const isRowButtons = buttonsDirection === 'row' || buttonsDirection === 'row-reverse'
     return (
         <Swipable
@@ -192,8 +191,8 @@ export const PopupPrimary = ({
                                                     iconColor={closeIconColor ? closeIconColor : colors.appTextColor1}
                                                     //buttonColor={colors.appBgColor3}
                                                     onPress={onPressClose}
-                                                    iconSize={closeIconSize ? closeIconSize : totalSize(3)}
-                                                    buttonSize={closeIconContainerSize ? closeIconContainerSize : totalSize(4)}
+                                                    iconSize={closeIconSize ? closeIconSize : responsiveFontSize(3)}
+                                                    buttonSize={closeIconContainerSize ? closeIconContainerSize : responsiveFontSize(4)}
                                                     isRound
                                                 //buttonColor={'red'}
                                                 />
@@ -227,8 +226,8 @@ export const PopupPrimary = ({
                                             customIcon={customIcon}
                                             iconColor={colors.appTextColor6}
                                             buttonColor={colors.appColor1}
-                                            buttonSize={totalSize(10)}
-                                            iconSize={totalSize(4)}
+                                            buttonSize={responsiveFontSize(10)}
+                                            iconSize={responsiveFontSize(4)}
                                             buttonStyle={{ borderRadius: 100, }}
                                         />
                                     }
@@ -340,7 +339,7 @@ export const ImagePickerPopup = ({ visible, toggle, onPressButton1, onPressButto
             // buttonText2="Cancel"
             // onPressButton2={toggle}
             toggle={toggle}
-            topMargin={height(60)}
+            topMargin={responsiveHeight(60)}
         >
             <Wrapper>
                 <Wrapper marginHorizontalBase>

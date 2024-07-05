@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { useSafeAreaInsets, SafeAreaProvider } from 'react-native-safe-area-context';
 import { Platform } from 'react-native';
-import { height } from 'react-native-dimension';
 import { responsiveHeight } from '../../utilities';
 
 
