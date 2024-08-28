@@ -6,7 +6,7 @@ import * as TextInputs from '../../textInput';
 import * as Modals from '../../modals';
 import * as Icons from '../../icons';
 
-export const ChatInput = ({ onPressEmojy, onPressSend, ...props }) => {
+export function ChatInput  ({ onPressEmojy, onPressSend, ...props })  {
     return (
         <Wrapper
             background1

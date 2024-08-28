@@ -50,9 +50,10 @@ import LinearGradient from 'react-native-linear-gradient';
 //         </Modal>
 //     );
 // }
-export const Swipable = ({
+
+export function Swipable  ({
     visible, toggle, disableSwipe, disableBackdropPress, topMargin, headerTitle,
-    headerRight, headerLeft, hideHeader, children, backdropOpacity, backdropColor, containerStyle }) => {
+    headerRight, headerLeft, hideHeader, children, backdropOpacity, backdropColor, containerStyle })  {
 
     // manage keyboard
     const keyboardVisible = useKeyboardStatus()
@@ -136,7 +137,7 @@ export const Swipable = ({
     )
 }
 
-export const PopupPrimary = ({
+export function PopupPrimary  ({
     visible, toggle, title, info, iconName, iconType,
     customIcon, buttonText1, buttonText2, onPressButton1,
     onPressButton2, topMargin, children, scrollEnabled,
@@ -149,7 +150,7 @@ export const PopupPrimary = ({
 
     //loaders
     loadingButton1, loadingButton2
-}) => {
+})  {
 
 
     // manage keyboard
@@ -331,7 +332,7 @@ export const PopupPrimary = ({
 }
 
 
-export const ImagePickerPopup = ({ visible, toggle, onPressButton1, onPressButton2, title, button1Text, button2Text, cancelText }) => {
+export function ImagePickerPopup  ({ visible, toggle, onPressButton1, onPressButton2, title, button1Text, button2Text, cancelText })  {
     return (
         <PopupPrimary
             visible={visible}

@@ -18,7 +18,7 @@ import Text from '../text';
 import Spacer from '../spacer';
 
 
-export const Primary = ({ }) => {
+export function Primary  ({ })  {
     return (
         <Wrapper isMain>
             <Wrapper flex={1} style={[{ justifyContent: 'center', backgroundColor: 'transparent' }]}>
@@ -33,7 +33,7 @@ export const Primary = ({ }) => {
 }
 
 
-export const Secondary = ({ isVisible }) => {
+export function Secondary ({ isVisible }) {
     return (
         <>
             {

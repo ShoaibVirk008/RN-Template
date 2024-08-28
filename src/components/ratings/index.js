@@ -4,7 +4,7 @@ import Wrapper from '../wrapper'
 import {  colors,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import { Icon } from '@rneui/base';
 
-export const Primary = ({ value, iconSize, iconStyle, onPressIcon, emptyIconName, fillIconName, emptyIconColor, fillIconColor, iconType, disabled }) => {
+export function Primary  ({ value, iconSize, iconStyle, onPressIcon, emptyIconName, fillIconName, emptyIconColor, fillIconColor, iconType, disabled })  {
     const ratings = [1, 2, 3, 4, 5]
     return (
         <>

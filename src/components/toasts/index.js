@@ -1,7 +1,7 @@
 const { default: Toast } = require("react-native-root-toast")
 const { colors, appStyles } = require("../../services")
 
-export const Success = (text) => {
+export function Success  (text)  {
     Toast.show(text ? text : 'Toast Message', {
         backgroundColor: colors.appBgColor1,
         textColor: colors.appTextColor1,
@@ -11,7 +11,7 @@ export const Success = (text) => {
         // shadowColor: colors.appBgColor1
     })
 }
-export const Error = (text) => {
+export function Error  (text)  {
     Toast.show(text ? text : 'Toast Message', {
         backgroundColor: colors.appBgColor1,
         textColor: colors.appTextColor1,

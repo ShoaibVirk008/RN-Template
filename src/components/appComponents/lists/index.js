@@ -9,7 +9,7 @@ import { FlatList, Pressable } from 'react-native';
 import { Icon } from '@rneui/base';
 import * as Icons from '../../icons';
 
-export const UsersListVerticalPrimary = ({ data, onPressItem, ...props }) => {
+export function UsersListVerticalPrimary  ({ data, onPressItem, ...props })  {
     return (
         <FlatList
             showsVerticalScrollIndicator={false}
@@ -69,7 +69,7 @@ export const UsersListVerticalPrimary = ({ data, onPressItem, ...props }) => {
     )
 }
 
-export const PostsListHorizontalPrimary = ({ data, onPressItem, ...props }) => {
+export function PostsListHorizontalPrimary  ({ data, onPressItem, ...props }) {
     return (
         <FlatList
             data={data}
@@ -107,7 +107,7 @@ export const PostsListHorizontalPrimary = ({ data, onPressItem, ...props }) => {
     )
 }
 
-export const PostsListVerticalPrimary = ({ data, onPressItem, ...props }) => {
+export function PostsListVerticalPrimary  ({ data, onPressItem, ...props }) {
     return (
         <FlatList
             data={data}
@@ -144,7 +144,7 @@ export const PostsListVerticalPrimary = ({ data, onPressItem, ...props }) => {
     )
 }
 
-export const PostPrimary = ({ userImage, userName, timeStamp, title, description, showFullDescription, topic, commentsCount, viewsCount, onPress, containerStyle }) => {
+export function PostPrimary ({ userImage, userName, timeStamp, title, description, showFullDescription, topic, commentsCount, viewsCount, onPress, containerStyle }) {
     return (
         <Pressable onPress={onPress}>
             <Wrapper isColored background1 paddingHorizontalSmall paddingVerticalSmall style={containerStyle}>
@@ -190,7 +190,7 @@ export const PostPrimary = ({ userImage, userName, timeStamp, title, description
 }
 
 
-export const ChatMessagesListVertical = ({ data }) => {
+export function ChatMessagesListVertical ({ data }) {
     return (
         <>
             {data.map((item, index) => {

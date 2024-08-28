@@ -6,7 +6,7 @@ import * as Icons from '../icons';
 import Text from '../text';
 import { Icon } from '@rneui/base';
 
-export const IconTitleArrow = ({ iconImage, iconName, iconType, iconSvg, title, onPress, left, right, invertColors, titleStyle, containerStyle, disableIconColor, arrowColor,iconContainerColor, ...props }) => {
+export function IconTitleArrow  ({ iconImage, iconName, iconType, iconSvg, title, onPress, left, right, invertColors, titleStyle, containerStyle, disableIconColor, arrowColor,iconContainerColor, ...props })  {
     const defaulTintColor = !invertColors ? colors.appTextColor2 : colors.appTextColor6
     const defaulArrowColor = arrowColor || (!invertColors ? colors.appTextColor4 : colors.appTextColor6)
     const defaulBackgroundColor = iconContainerColor||(!invertColors ? colors.appBgColor1 : colors.appBgColor6)

@@ -4,7 +4,7 @@ import { appStyles, colors, sizes,responsiveHeight,responsiveWidth,responsiveFon
 import * as Buttons from '../buttons'
 import Wrapper from '../wrapper'
 
-export const Primary = ({ data, onPress, disabled, containerStyle, buttonStyle, textStyle, keyName }) => {
+export function Primary  ({ data, onPress, disabled, containerStyle, buttonStyle, textStyle, keyName }) {
     return (
 
         <Wrapper flexDirectionRow style={[containerStyle]}>

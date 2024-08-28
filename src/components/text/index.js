@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text } from 'react-native'
 import { appStyles,  } from '../../services';
 
-export default ({
+export default function ({
     style,
     children,
     isXXLTitle,
@@ -39,7 +39,7 @@ export default ({
     isMediumFont,
     isRegularFont,
     isLightFont,
-    ...props }) => {
+    ...props })  {
     return (
         <Text
             style={[

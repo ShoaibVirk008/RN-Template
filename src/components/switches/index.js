@@ -6,7 +6,7 @@ import Text  from '../text'
 import { colors, handleAnimation, HelpingMethods, sizes ,responsiveHeight,responsiveWidth,responsiveFontSize} from '../../services'
 
 
-export const Primary = ({ value, onPress,tintColor }) => {
+export function Primary  ({ value, onPress,tintColor })  {
     const defaultTintColor=tintColor||value?colors.appColor1:colors.appBgColor5
     return (
         <Wrapper style={{}} isCenter>

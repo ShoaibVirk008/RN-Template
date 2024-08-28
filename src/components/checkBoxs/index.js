@@ -3,12 +3,12 @@ import { View, Text, Image, StyleSheet, } from 'react-native'
 import { colors, sizes, appStyles } from '../../services';
 import * as Icons from '../icons';
 
-export const Primary = ({
+export function Primary  ({
      textStyle, containerStyle, text, checked, 
      onPress,checkedIconName,uncheckedIconName,
      checkIconType,uncheckIconType,checkIconsize,
      checkedIconColor,uncheckedIconColor
-    }) => {
+    })  {
     const defaultCheckedIconName =checkedIconName?checkedIconName: 'check-circle'
     const defaultUncheckedIconName =uncheckedIconName?uncheckedIconName: 'checkbox-blank-circle-outline'
     const defaultcheckIconType =checkIconType?checkIconType: 'material-community'

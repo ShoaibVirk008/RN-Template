@@ -9,13 +9,13 @@ import Wrapper from '../wrapper';
 import Text from '../text';
 import * as  Spacer from '../spacer';
 
-export const Primary = ({
+export function Primary  ({
     onDonePress, containerStyle, data, title, onChange,
     placeholder, error, value, itemKey,
     left, customIconLeft, iconSizeLeft, iconColorLeft,
     iconStyleLeft, iconNameLeft, mainContainerStyle, iconTypeLeft,
     titleStatic
-}) => {
+})  {
 
     const placeholderObject = {
         label: placeholder,

@@ -8,7 +8,7 @@ const TempSpacer = ({ style, width, height, }) => {
     );
 }
 
-export default Spacer = ({ horizontal, height, width, style, isBasic, isSmall, isTiny, isMedium, isDoubleBase, isStatusBarHeigt, isHeaderHeight, isBottomTabBarHeight }) => {
+export default function Spacer ({ horizontal, height, width, style, isBasic, isSmall, isTiny, isMedium, isDoubleBase, isStatusBarHeigt, isHeaderHeight, isBottomTabBarHeight })  {
     const { statusBarHeight, headerHeight } = useSizes()
     const tempSize = isTiny ? sizes.TinyMargin :
         isSmall ? sizes.smallMargin :

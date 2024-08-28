@@ -4,7 +4,7 @@ import { Icon } from '@rneui/base';
 import { colors, sizes, appStyles,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import Wrapper from '../wrapper';
 
-export const Round = ({ style, size, source }) => {
+export function Round  ({ style, size, source })  {
     const defaultSize = responsiveFontSize(5)
     return (
         <Image
@@ -14,7 +14,7 @@ export const Round = ({ style, size, source }) => {
     );
 }
 
-export const SqareRound = ({ style, size, source }) => {
+export function SqareRound  ({ style, size, source })  {
     const defaultSize = responsiveFontSize(5)
     return (
         <Image
@@ -24,7 +24,7 @@ export const SqareRound = ({ style, size, source }) => {
     );
 }
 
-export const Profile = ({ imageStyle, source, containerStyle, animation, onPress }) => {
+export function Profile  ({ imageStyle, source, containerStyle, animation, onPress })  {
     return (
         <TouchableOpacity activeOpacity={1} onPress={onPress}>
             <Wrapper animation={animation ? animation : 'zoomIn'} style={[styles.ImageProfileContainer, containerStyle]}>

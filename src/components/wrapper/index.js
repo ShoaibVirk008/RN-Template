@@ -4,7 +4,7 @@ import { colors, appStyles, sizes } from '../../services';
 import * as Animatable from 'react-native-animatable'
 import LinearGradient from 'react-native-linear-gradient';
 
-export default ({
+export default function ({
     children, style, animation, duration,
     iterationCount, isMain, isGradient, flex,
     flexDirectionRow,
@@ -56,7 +56,7 @@ export default ({
     marginHorizontalLarge,
     marginHorizontalZero,
     ...linearGradientProps
-}) => {
+})  {
     if (isGradient) {
         return (
             <LinearGradient

@@ -33,11 +33,11 @@ import * as StatusBars from '../statusBars';
 //     )
 // }
 
-export const Primary = ({
+export function Primary  ({
     onBackPress, search, title, right, searchPress,
     left, titleContainerStyle, centerTitle, tintColor,
     containerStyle, headerTitle, alignTitleLeft, showBackArrow,
-    invertColors, titleStyle, leftContainerStyle, rightContainerStyle, shadow, auth }) => {
+    invertColors, titleStyle, leftContainerStyle, rightContainerStyle, shadow, auth }) {
 
     const { statusBarHeight, headerHeight, } = useSizes()
     const defaultTintColor = !invertColors ? colors.appTextColor6 : colors.appColor1
@@ -118,7 +118,7 @@ export const Primary = ({
     )
 }
 
-export const Auth = ({ ...PrimaryProps }) => {
+export function Auth  ({ ...PrimaryProps })  {
     return (
         <Wrapper animation={'slideInDown'}>
             <Primary

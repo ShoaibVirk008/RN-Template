@@ -5,7 +5,7 @@ import { colors, appStyles, sizes, appSvgs,responsiveHeight,responsiveWidth } fr
 import Wrapper from '../wrapper';
 import Text from '../text';
 
-export const Back = ({ size, onPress, style, color }) => {
+export function Back  ({ size, onPress, style, color }) {
     const defaultSize = size || responsiveWidth(5)
     return (
         // <Icon
@@ -27,14 +27,14 @@ export const Back = ({ size, onPress, style, color }) => {
         />
     );
 }
-export const Button = ({
+export function Button  ({
     buttonStyle, onPress, shadow, shadowColored, iconSize, iconColor,
     iconName, iconType, buttonColor, buttonSize,
     customIcon, svgIcon, iconStyle, disabled, isRound, showBadge,
     badgeValue,
     //text props
     text, textStyle, textColor, badgeStyle
-}) => {
+})  {
     const SvgIcon = svgIcon
     const defaultButtonsize = responsiveWidth(5)
     const _buttonSize = buttonSize ? buttonSize : defaultButtonsize
@@ -101,7 +101,7 @@ export const Button = ({
         </TouchableOpacity>
     );
 }
-export const Custom = ({ icon, size, animation, duration, color, onPress, containerStyle }) => {
+export function  Custom  ({ icon, size, animation, duration, color, onPress, containerStyle }) {
     const defaulSize = responsiveWidth(5)
     return (
         <Wrapper animation={animation} duration={duration} style={containerStyle}>
@@ -117,7 +117,7 @@ export const Custom = ({ icon, size, animation, duration, color, onPress, contai
 }
 
 
-export const WithText = ({ text, containerStyle, title, customIcon, onPress, tintColor, svgIcon, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle, textContainerStyle }) => {
+export function WithText  ({ text, containerStyle, title, customIcon, onPress, tintColor, svgIcon, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle, textContainerStyle })  {
     const SvgIcon = svgIcon
     const defaulIconSize = iconSize ? iconSize : responsiveWidth(2)
     return (
@@ -153,7 +153,7 @@ export const WithText = ({ text, containerStyle, title, customIcon, onPress, tin
         </TouchableOpacity>
     );
 }
-export const Svg = ({ svg, onPress, size }) => {
+export function Svg  ({ svg, onPress, size }) {
     const Svg = svg
     const defaultSize = size || responsiveWidth(2.5)
     return (
