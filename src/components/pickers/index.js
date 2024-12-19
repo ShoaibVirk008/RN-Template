@@ -7,7 +7,7 @@ import * as Icons from '../icons';
 import * as TextInputs from '../textInput';
 import Wrapper from '../wrapper';
 import Text from '../text';
-import * as  Spacer from '../spacer';
+import Spacer from '../spacer';
 
 export function Primary  ({
     onDonePress, containerStyle, data, title, onChange,
