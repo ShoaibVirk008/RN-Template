@@ -1,17 +1,21 @@
 import { UIManager, LayoutAnimation, Platform } from "react-native";
 import { appointmentStatuses, orderStatuses, rolesTypes } from "../data";
 // import firestore from '@react-native-firebase/firestore'
-
+import {throttle} from 'lodash';
 // import { faker } from '@faker-js/faker'
 import { colors } from "../../utilities";
 import store from "../../../store";
-export const handleAnimation = () => {
-    if (Platform.OS === "android") {
-        UIManager.setLayoutAnimationEnabledExperimental &&
-            UIManager.setLayoutAnimationEnabledExperimental(true);
+const configureAnimation = () => {
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
     }
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
-}
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+  };
+  
+  // Throttle the function to prevent excessive calls
+  export const handleAnimation = throttle(configureAnimation, 500); // 500ms delay between triggers
+  
 
 export const checkExpiry = () => {
     var d1 = Date.parse("2012-11-01");
