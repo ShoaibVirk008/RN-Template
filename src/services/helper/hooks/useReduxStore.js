@@ -10,12 +10,15 @@ export default function () {
   const app = useSelector(state => state.app);
 
   const {signedInUser} = auth;
+  const {isBottomTabVisible} = auth;
 
   return {
     dispatch,
     auth,
     app,
-    //
+    //auth
     signedInUser,
+    //app
+    isBottomTabVisible
   };
 }
