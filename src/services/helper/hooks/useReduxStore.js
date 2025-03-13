@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {getUserRole} from '../methods';
-import {rolesTypes} from '../data';
+import {setSignedInUser} from '../../../store/authSlice';
+import {setIsBottomTabVisible} from '../../../store/appSlice';
 
 export default function () {
   //const { signedInUser } = useSelector(state => state?.auth)
@@ -8,17 +8,23 @@ export default function () {
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth);
   const app = useSelector(state => state.app);
+  console.log('useReduxStore auth: ',auth)
+  console.log('useReduxStore app: ',app)
 
   const {signedInUser} = auth;
-  const {isBottomTabVisible} = auth;
+  const {isBottomTabVisible} = app;
 
   return {
     dispatch,
     auth,
     app,
-    //auth
+    //auth states
     signedInUser,
-    //app
-    isBottomTabVisible
+    //app states
+    isBottomTabVisible,
+    //auth actions
+    setSignedInUser: v => dispatch(setSignedInUser(v)),
+    //app actions
+    setIsBottomTabVisible: v => dispatch(setIsBottomTabVisible(v)),
   };
 }
