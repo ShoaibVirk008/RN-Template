@@ -9,7 +9,7 @@ const AppNavigation = () => {
     return (
         <AppStack.Navigator
             screenOptions={{ headerShown: false }}
-            initialRouteName={routes.home}
+            initialRouteName={routes.bottomTab}
         >
              <AppStack.Screen name={routes.bottomTab} component={BottomTab} /> 
             <AppStack.Screen name={routes.postDetail} component={App.PostDetail} />
