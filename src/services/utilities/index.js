@@ -1,9 +1,9 @@
-export * from './colors'
-export * from './assets'
+export * from './colors/Colors'
+export * from './assets/Assets'
 // export * from './fonts'
-export * from './sizes'
-export * from './appStyles'
-export * from './responsive'
+export * from './sizes/Sizes'
+export * from './styles/Styles'
+export * from './responsive/Responsive'
 
-import api from './api'
-export { api }
+import Api from './api/Api'
+export { Api }

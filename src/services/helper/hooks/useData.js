@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { generateRandomUsers } from "../methods";
+import { generateRandomUsers } from "../methods/Methods";
 
 export default function () {
     const numberOfUsers = 25; // You can change this to the desired number of users

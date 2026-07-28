@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes, FlatList, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
-import { colors, sizes, appStyles, useKeyboardStatus,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
+import { APP_COLORS, APP_SIZES, APP_STYLES, useKeyboardStatus,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
 import Modal from 'react-native-modal'
-import Wrapper from '../wrapper';
-import Text from '../text';
-import Spacer from '../spacer';
-import * as Icons from '../icons';
-import * as Buttons from '../buttons';
-import * as ScrollViews from '../scrollViews';
+import Wrapper from '../wrapper/Wrapper';
+import Text from '../text/Text';
+import Spacer from '../spacer/Spacer';
+import * as Icons from '../icons/Icons';
+import * as Buttons from '../buttons/Buttons';
+import * as ScrollViews from '../scrollViews/ScrollViews';
 import LinearGradient from 'react-native-linear-gradient';
 
 
@@ -91,16 +91,16 @@ export function Swipable  ({
                         style={[{
                             //flex: 1,
                             //marginTop: defaultTopMargin,
-                            backgroundColor: colors.appBgColor1,
+                            backgroundColor: APP_COLORS.appBgColor1,
                             borderTopRightRadius: 25,
                             borderTopLeftRadius: 25,
                             //...appStyles.shadowExtraDark
                         }, containerStyle]}>
                         {
                             hideHeader ? null :
-                                <Wrapper style={appStyles.rowCompContainer}>
+                                <Wrapper style={APP_STYLES.rowCompContainer}>
                                     <Wrapper style={{ alignItems: 'center', right: 0, left: 0 }}>
-                                        <Text isTinyTitle style={[appStyles.headerTitleStyle]}>
+                                        <Text isTinyTitle style={[APP_STYLES.headerTitleStyle]}>
                                             {/* {data ? data.length + ' People' : 0 + ' People'} */}
                                             {headerTitle ? headerTitle : 'Title'}
                                         </Text>
@@ -116,7 +116,7 @@ export function Swipable  ({
                                                     name="x"
                                                     type="feather"
                                                     size={responsiveFontSize(2.5)}
-                                                    color={colors.appTextColor1}
+                                                    color={APP_COLORS.appTextColor1}
                                                     onPress={toggle}
                                                 />
                                         }
@@ -175,21 +175,21 @@ export function PopupPrimary  ({
                 {
                     headerTitle ?
                         <Wrapper style={{}}>
-                            <Wrapper style={[{ paddingHorizontal: sizes.marginHorizontal, backgroundColor: 'transparent', paddingBottom: sizes.marginVertical, paddingTop: sizes.marginVertical * 1.5, justifyContent: 'center', }, headerStyle]}>
-                                <Text isSmallTitle style={[appStyles.textCenter, headerTitleStyle]}>{headerTitle}</Text>
+                            <Wrapper style={[{ paddingHorizontal: APP_SIZES.marginHorizontal, backgroundColor: 'transparent', paddingBottom: APP_SIZES.marginVertical, paddingTop: APP_SIZES.marginVertical * 1.5, justifyContent: 'center', }, headerStyle]}>
+                                <Text isSmallTitle style={[APP_STYLES.textCenter, headerTitleStyle]}>{headerTitle}</Text>
                                 {
                                     headerSubtitle ?
-                                        <Text isRegular style={[appStyles.textCenter, { marginTop: sizes.smallMargin }, headerSubtitleStyle]}>{headerSubtitle}</Text>
+                                        <Text isRegular style={[APP_STYLES.textCenter, { marginTop: APP_SIZES.smallMargin }, headerSubtitleStyle]}>{headerSubtitle}</Text>
                                         :
                                         null
                                 }
-                                <Wrapper isAbsolute style={[{ right: sizes.marginHorizontal, top: sizes.marginVertical * 1.3 }, rightContainerStyle]}>
+                                <Wrapper isAbsolute style={[{ right: APP_SIZES.marginHorizontal, top: APP_SIZES.marginVertical * 1.3 }, rightContainerStyle]}>
                                     {
                                         headerRight ? headerRight :
                                             onPressClose ?
                                                 <Icons.Button
                                                     iconName="close"
-                                                    iconColor={closeIconColor ? closeIconColor : colors.appTextColor1}
+                                                    iconColor={closeIconColor ? closeIconColor : APP_COLORS.appTextColor1}
                                                     //buttonColor={colors.appBgColor3}
                                                     onPress={onPressClose}
                                                     iconSize={closeIconSize ? closeIconSize : responsiveFontSize(3)}
@@ -205,7 +205,7 @@ export function PopupPrimary  ({
                             {headerBottom && headerBottom}
                         </Wrapper>
                         :
-                        <Spacer height={sizes.baseMargin * 1.5} />
+                        <Spacer height={APP_SIZES.baseMargin * 1.5} />
                 }
 
 
@@ -214,7 +214,7 @@ export function PopupPrimary  ({
                     scrollEnabled={scrollEnabled}
 
                 >
-                    <Wrapper style={[appStyles.alignItemsCenter]}>
+                    <Wrapper style={[APP_STYLES.alignItemsCenter]}>
                         {
 
                             (icon || iconName || customIcon) ?
@@ -225,14 +225,14 @@ export function PopupPrimary  ({
                                             iconName={iconName}
                                             iconType={iconType}
                                             customIcon={customIcon}
-                                            iconColor={colors.appTextColor6}
-                                            buttonColor={colors.appColor1}
+                                            iconColor={APP_COLORS.appTextColor6}
+                                            buttonColor={APP_COLORS.appColor1}
                                             buttonSize={responsiveFontSize(10)}
                                             iconSize={responsiveFontSize(4)}
                                             buttonStyle={{ borderRadius: 100, }}
                                         />
                                     }
-                                    <Spacer height={sizes.baseMargin * 1.5} />
+                                    <Spacer height={APP_SIZES.baseMargin * 1.5} />
                                 </>
                                 :
                                 null
@@ -242,9 +242,9 @@ export function PopupPrimary  ({
                         title ?
                             <>
                                 <Wrapper marginHorizontalBase style={{ backgroundColor: 'transparent' }}>
-                                    <Text isSmallTitle isBoldFont style={[appStyles.textCenter, titleStyle]}>{title}</Text>
+                                    <Text isSmallTitle isBoldFont style={[APP_STYLES.textCenter, titleStyle]}>{title}</Text>
                                 </Wrapper>
-                                <Spacer height={sizes.baseMargin} />
+                                <Spacer height={APP_SIZES.baseMargin} />
                             </>
                             :
                             null
@@ -253,7 +253,7 @@ export function PopupPrimary  ({
                         info ?
                             <>
                                 <Wrapper marginHorizontalLarge style={{ backgroundColor: 'transparent', }}>
-                                    <Text isRegular style={[appStyles.textCenter]}>{info}</Text>
+                                    <Text isRegular style={[APP_STYLES.textCenter]}>{info}</Text>
                                 </Wrapper>
                                 <Spacer isBasic />
                             </>
@@ -271,12 +271,12 @@ export function PopupPrimary  ({
                         <Wrapper
                             marginHorizontalBase
                             style={[{
-                                backgroundColor: colors.appBgColor1,
-                                paddingBottom: sizes.baseMargin * 1.5,
-                                paddingTop: sizes.baseMargin,
+                                backgroundColor: APP_COLORS.appBgColor1,
+                                paddingBottom: APP_SIZES.baseMargin * 1.5,
+                                paddingTop: APP_SIZES.baseMargin,
                                 flexDirection: buttonsDirection || 'column-reverse',
                             },
-                            buttonWrapperShadow && appStyles.shadowDark,
+                            buttonWrapperShadow && APP_STYLES.shadowDark,
                                 buttonsContainerStyle
                             ]}>
                             {
@@ -285,9 +285,9 @@ export function PopupPrimary  ({
                                         <Buttons.Bordered
                                             text={buttonText2}
                                             onPress={onPressButton2}
-                                            tintColor={colors.appColor1}
+                                            tintColor={APP_COLORS.appColor1}
                                             //tintColor={colors.appTextColor1}
-                                            buttonStyle={[appStyles.marginHorizontalZero, button2Style]}
+                                            buttonStyle={[APP_STYLES.marginHorizontalZero, button2Style]}
                                             textStyle={[buttonText2Style]}
                                             isLoading={loadingButton2}
 
@@ -299,9 +299,9 @@ export function PopupPrimary  ({
                             {
                                 (onPressButton2 && onPressButton1) ?
                                     isRowButtons ?
-                                        <Spacer width={sizes.marginHorizontal} />
+                                        <Spacer width={APP_SIZES.marginHorizontal} />
                                         :
-                                        <Spacer height={sizes.marginVertical} />
+                                        <Spacer height={APP_SIZES.marginVertical} />
                                     : null
                             }
 
@@ -350,8 +350,8 @@ export function ImagePickerPopup  ({ visible, toggle, onPressButton1, onPressBut
                                 <Buttons.Colored
                                     text={button1Text || "Take Photo"}
                                     //  iconName="camera"
-                                    buttonStyle={{ backgroundColor: colors.appBgColor2 }}
-                                    textStyle={[{ color: colors.appTextColor3 }]}
+                                    buttonStyle={{ backgroundColor: APP_COLORS.appBgColor2 }}
+                                    textStyle={[{ color: APP_COLORS.appTextColor3 }]}
                                     onPress={() => {
                                         toggle();
                                         setTimeout(() => {
@@ -369,8 +369,8 @@ export function ImagePickerPopup  ({ visible, toggle, onPressButton1, onPressBut
                     <Buttons.Colored
                         text={button2Text || "Select from Gallery"}
                         //iconName="image"
-                        buttonStyle={{ backgroundColor: colors.appBgColor2 }}
-                        textStyle={[{ color: colors.appTextColor3 }]}
+                        buttonStyle={{ backgroundColor: APP_COLORS.appBgColor2 }}
+                        textStyle={[{ color: APP_COLORS.appTextColor3 }]}
                         onPress={() => {
                             toggle();
                             setTimeout(() => {
@@ -383,8 +383,8 @@ export function ImagePickerPopup  ({ visible, toggle, onPressButton1, onPressBut
                     <Buttons.Colored
                         text={cancelText || "Cancel"}
                         //iconName="image"
-                        buttonStyle={{ backgroundColor: colors.transparent }}
-                        textStyle={[{ color: colors.appTextColor1 }]}
+                        buttonStyle={{ backgroundColor: APP_COLORS.transparent }}
+                        textStyle={[{ color: APP_COLORS.appTextColor1 }]}
                         onPress={() => {
                             toggle();
                         }}

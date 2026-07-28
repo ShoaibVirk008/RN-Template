@@ -1,0 +1,90 @@
+import React from 'react'
+// import { Wrapper, Icons, Text } from '..'
+import  Wrapper from '../wrapper/Wrapper'
+import * as Icons  from '../icons/Icons'
+import Text  from '../text/Text'
+import { APP_COLORS, handleAnimation, HelpingMethods, APP_SIZES ,responsiveHeight,responsiveWidth,responsiveFontSize} from '../../services'
+
+
+export function Primary  ({ value, onPress,tintColor })  {
+    const defaultTintColor=tintColor||value?APP_COLORS.appColor1:APP_COLORS.appBgColor5
+    return (
+        <Wrapper style={{}} isCenter>
+            <Icons.Button
+                iconName={"circle"}
+                iconType="font-awesome"
+                activeOpacity={1}
+                iconSize={responsiveFontSize(2.5)}
+                buttonStyle={{
+                    width: responsiveFontSize(5),
+                    alignItems: value ? 'flex-end' : 'flex-start',
+                    height: null,
+                    borderRadius: 100,
+                    borderWidth: 1,
+                    borderColor: defaultTintColor,
+                    paddingHorizontal: 1.75,
+                    paddingVertical: 0.1,
+                    backgroundColor: APP_COLORS.transparent,
+                }}
+                iconColor={defaultTintColor}
+                buttonRadius={100}
+                onPress={onPress ? () => {
+                    handleAnimation()
+                    onPress()
+                } : null}
+            />
+        </Wrapper>
+    )
+}
+// export const Primary = ({ value, onPress }) => {
+//     return (
+//         <Wrapper style={{}} isCenter>
+//             <Icons.Button
+//                 iconName={"circle"}
+//                 iconType="font-awesome"
+//                 activeOpacity={1}
+//                 iconSize={responsiveFontSize(2.5)}
+//                 buttonStyle={{
+//                     width: responsiveFontSize(5),
+//                     alignItems: value ? 'flex-end' : 'flex-start',
+//                     height: null,
+//                     borderRadius: 100,
+//                     //borderWidth: 1,
+//                     borderColor: colors.appBgColor3,
+//                     paddingHorizontal: 1.75,
+//                     paddingVertical: 0.1,
+//                     backgroundColor: value?colors.appColor1+'20':colors.appBgColor3,
+//                 }}
+//                 iconColor={value ? colors.appColor1 : colors.appBgColor4}
+//                 buttonRadius={100}
+//                 onPress={onPress ? () => {
+//                     handleAnimation()
+//                     onPress()
+//                 } : null}
+//             />
+//         </Wrapper>
+//     )
+// }
+
+export const Secondary = ({ value, onPress }) => {
+    return (
+        <Wrapper style={{}} isCenter>
+            <Icons.Button
+                iconName={"circle"}
+                iconType="font-awesome"
+                activeOpacity={1}
+                iconSize={responsiveFontSize(2.5)}
+                buttonStyle={{ width: responsiveFontSize(7), alignItems: !value ? 'flex-end' : 'flex-start', height: null, borderRadius: 100, borderWidth: 0, borderColor: value ? APP_COLORS.appColor1 : APP_COLORS.appBgColor3, paddingHorizontal: 1.75, paddingVertical: 0.1, }}
+                iconColor={value ? APP_COLORS.appColor2 : APP_COLORS.error}
+                buttonRadius={100}
+                onPress={onPress ? () => {
+                   handleAnimation()
+                    onPress()
+                } : null}
+            />
+            <Wrapper isAbsolute style={[value ? { right: APP_SIZES.marginHorizontal / 1.5 } : { left: APP_SIZES.marginHorizontal / 1.5 }]}>
+                <Text isSmall style={[{ color: value ? APP_COLORS.appColor2 : APP_COLORS.error, }]}>{value ? 'ON' : 'OFF'}</Text>
+            </Wrapper>
+        </Wrapper>
+    )
+}

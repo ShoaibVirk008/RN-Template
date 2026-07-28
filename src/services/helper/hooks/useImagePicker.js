@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react';
 import * as ImagePicker from 'react-native-image-picker';
-import { imagePickerOptions } from '../../constants';
+import { IMAGE_PICKER_OPTIONS } from '../../constants/Constants';
 
 const useImagePicker = () => {
 
-    const options=imagePickerOptions
+    const options=IMAGE_PICKER_OPTIONS
     const [image, setImage] = useState(null);
 
     // Function to open the image picker for the camera

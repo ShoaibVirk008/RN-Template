@@ -1,3 +1,3 @@
-export * from './methods'
+export * from './methods/Methods'
 export * from './hooks'
-export * from './data'
+export * from './data/Data'

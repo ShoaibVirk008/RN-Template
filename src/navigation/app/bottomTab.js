@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { appImages, colors, responsiveFontSize, responsiveWidth, routes, tabs, useReduxStore } from "../../services";
+import { APP_IMAGES, APP_COLORS, responsiveFontSize, responsiveWidth, ROUTES, TABS, useReduxStore } from "../../services";
 import { Images, Wrapper } from "../../components";
 import { Icon } from "@rneui/base";
 import * as App from '../../screens/app'
@@ -13,7 +13,7 @@ export default function BottomTabNavigation() {
 
     const TabIcon = ({ color, iconName, iconType, size, focused, image }) => {
         return (
-            <Wrapper alignItemsCenter style={{ flex: 1, borderTopWidth: 3.5, borderTopColor: !focused ? colors.appColor1 : colors.appBgColor1, width: responsiveWidth(15), justifyContent: 'center', marginTop: 0 }}>
+            <Wrapper alignItemsCenter style={{ flex: 1, borderTopWidth: 3.5, borderTopColor: !focused ? APP_COLORS.appColor1 : APP_COLORS.appBgColor1, width: responsiveWidth(15), justifyContent: 'center', marginTop: 0 }}>
                 {
                     !image ?
                         <Icon name={iconName} type={iconType} size={tabIconSize} color={color} focused={focused} />
@@ -28,11 +28,11 @@ export default function BottomTabNavigation() {
             <BottomTabStack.Navigator
                 screenOptions={{
                     headerShown: false,
-                    ...tabs.tabBarOptions,
+                    ...TABS.tabBarOptions,
                 }}
             >
                 <BottomTabStack.Screen
-                    name={routes.home}
+                    name={ROUTES.home}
                     component={App.Home}
                     options={() => ({
                         tabBarLabel: "Home",
@@ -42,7 +42,7 @@ export default function BottomTabNavigation() {
                     })}
                 />
                 <BottomTabStack.Screen
-                    name={routes.community}
+                    name={ROUTES.community}
                     component={App.Community}
                     options={() => ({
                         tabBarLabel: "Community",
@@ -52,7 +52,7 @@ export default function BottomTabNavigation() {
                     })}
                 />
                 <BottomTabStack.Screen
-                    name={routes.shop}
+                    name={ROUTES.shop}
                     component={App.Shop}
                     options={() => ({
                         tabBarLabel: "Shop",
@@ -64,7 +64,7 @@ export default function BottomTabNavigation() {
 
 
                 <BottomTabStack.Screen
-                    name={routes.account}
+                    name={ROUTES.account}
                     component={App.Account}
                     options={() => ({
                         tabBarLabel: "Account",

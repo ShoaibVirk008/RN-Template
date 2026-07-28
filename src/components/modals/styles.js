@@ -1,35 +1,35 @@
 import { StyleSheet } from "react-native";
-import { sizes, colors, appStyles } from "../../services";
+import { APP_SIZES, APP_COLORS, APP_STYLES } from "../../services";
 
 export const styles = StyleSheet.create({
     professionsCard: {
         //borderColor:colors.appBgColor3,
-        marginBottom: sizes.marginBottom
+        marginBottom: APP_SIZES.marginBottom
     },
     selectedProfessionsCard: {
         // borderColor:colors.appTextColor1,
-        backgroundColor: colors.appBgColor2,
-        marginBottom: sizes.marginBottom
+        backgroundColor: APP_COLORS.appBgColor2,
+        marginBottom: APP_SIZES.marginBottom
     },
 
     ////SwipableModal
     swipableModalFooter: {
-        backgroundColor: colors.appBgColor1,
-        borderTopLeftRadius: sizes.cardRadius,
-        borderTopRightRadius: sizes.cardRadius,
-        paddingTop: sizes.baseMargin,
-        ...appStyles.shadowDark
+        backgroundColor: APP_COLORS.appBgColor1,
+        borderTopLeftRadius: APP_SIZES.cardRadius,
+        borderTopRightRadius: APP_SIZES.cardRadius,
+        paddingTop: APP_SIZES.baseMargin,
+        ...APP_STYLES.shadowDark
     },
     barContainer: {
-        top: sizes.TinyMargin,
+        top: APP_SIZES.TinyMargin,
         alignSelf: 'center',
     },
     //EnterValueModalPrimaryCard
     enterValueModalPrimaryCard: {
-        backgroundColor: colors.appBgColor1,
-        borderRadius: sizes.modalRadius,
-        padding: sizes.baseMargin,
-        marginHorizontal: sizes.marginHorizontal * 2,
-        ...appStyles.shadow
+        backgroundColor: APP_COLORS.appBgColor1,
+        borderRadius: APP_SIZES.modalRadius,
+        padding: APP_SIZES.baseMargin,
+        marginHorizontal: APP_SIZES.marginHorizontal * 2,
+        ...APP_STYLES.shadow
     },
 })

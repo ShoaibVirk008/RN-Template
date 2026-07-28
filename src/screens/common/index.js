@@ -1,4 +1,4 @@
-import TermsOfService from './termsOfService'
-import PrivacyPolicy from './privacyPolicy'
+import TermsOfService from './termsOfService/TermsOfService'
+import PrivacyPolicy from './privacyPolicy/PrivacyPolicy'
 
 export { TermsOfService, PrivacyPolicy}

@@ -1,8 +1,8 @@
-import Home from './home'
-import Community from './community'
-import Shop from './shop'
-import Account from './account'
-import PostDetail from './postDetail'
+import Home from './home/Home'
+import Community from './community/Community'
+import Shop from './shop/Shop'
+import Account from './account/Account'
+import PostDetail from './postDetail/PostDetail'
 
 
 
