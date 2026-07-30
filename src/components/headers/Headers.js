@@ -1,5 +1,6 @@
 import React from 'react'
-import { APP_STYLES, APP_SVGS, APP_COLORS, fontSize, responsiveFontSize, responsiveHeight, responsiveWidth, APP_SIZES, useSizes } from '../../services'
+import { APP_STYLES, APP_SVGS, APP_COLORS, fontSize, responsiveFontSize, responsiveHeight, responsiveWidth, APP_SIZES } from '../../utilities';
+import { useSizes } from '../../helper';
 //import {Icons, Wrapper, Text } from '..'
 import { goBack } from '../../navigation/RootNavigation'
 import * as Icons from '../icons/Icons';

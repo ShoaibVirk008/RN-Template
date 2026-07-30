@@ -1,7 +1,7 @@
 import React from 'react'
 import {Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes } from 'react-native'
 import { Icon } from '@rneui/base';
-import { APP_COLORS, APP_SIZES, APP_STYLES,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
+import { APP_COLORS, APP_SIZES, APP_STYLES, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../utilities';
 import Wrapper from '../wrapper/Wrapper';
 
 export function Round  ({ style, size, source })  {

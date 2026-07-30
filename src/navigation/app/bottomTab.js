@@ -1,5 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { APP_IMAGES, APP_COLORS, responsiveFontSize, responsiveWidth, ROUTES, TABS, useReduxStore } from "../../services";
+import { APP_IMAGES, APP_COLORS, responsiveFontSize, responsiveWidth } from "../../utilities";
+import { useReduxStore } from "../../helper";
+import { ROUTES, TABS } from "../../services";
 import { Images, Wrapper } from "../../components";
 import { Icon } from "@rneui/base";
 import * as App from '../../screens/app'

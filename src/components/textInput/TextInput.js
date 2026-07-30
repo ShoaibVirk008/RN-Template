@@ -17,7 +17,7 @@ import {
   responsiveHeight,
   responsiveWidth,
   responsiveFontSize,
-} from '../../services';
+} from '../../utilities';
 import * as Icons from '../icons/Icons';
 import Wrapper from '../wrapper/Wrapper';
 import Text from '../text/Text';

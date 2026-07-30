@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text } from 'react-native'
-import { APP_STYLES,  } from '../../services';
+import { APP_STYLES } from '../../utilities';
 
 export default function ({
     style,

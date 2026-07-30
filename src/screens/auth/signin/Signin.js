@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {  Text, TextInputs, Buttons, ScrollViews, Wrapper, Spacer, Headers } from '../../../components';
-import { responsiveFontSize, responsiveHeight, ROUTES, APP_SVGS, responsiveWidth, APP_SIZES, } from '../../../services';
+import { responsiveFontSize, responsiveHeight, APP_SVGS, responsiveWidth, APP_SIZES } from '../../../utilities';
+import { ROUTES } from '../../../services';
 import { useHooks } from './hooks/useSignin';
 export default function Index(props) {
   const { navigate } = props.navigation

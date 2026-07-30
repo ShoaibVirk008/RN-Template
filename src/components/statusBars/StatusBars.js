@@ -1,6 +1,6 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
-import { APP_COLORS } from '../../services'
+import { APP_COLORS } from '../../utilities';
 
 
 export const Dark = () => {

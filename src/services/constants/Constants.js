@@ -1,5 +1,5 @@
-import { APP_COLORS } from "../utilities/colors/Colors"
-import { APP_STYLES } from "../utilities/styles/Styles"
+import { APP_COLORS } from "../../utilities/colors/Colors"
+import { APP_STYLES } from "../../utilities/styles/Styles"
 
 
 export const BASE_URL = 'https://localserver/v1/'

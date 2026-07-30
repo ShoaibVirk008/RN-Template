@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Icon } from '@rneui/base';
-import { APP_COLORS, APP_STYLES, APP_SIZES ,responsiveHeight,responsiveWidth,responsiveFontSize} from '../../services';
+import { APP_COLORS, APP_STYLES, APP_SIZES, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../utilities';
 import * as Icons from '../icons/Icons';
 import Wrapper from '../wrapper/Wrapper';
 import Text from '../text/Text';

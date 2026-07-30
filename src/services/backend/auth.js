@@ -1,5 +1,5 @@
 import { END_POINTS } from "../constants/Constants";
-import Api from "../utilities/api/Api";
+import Api from "../../utilities/api/Api";
 
 const BASIC_AUTH = 'Basic c2VydmVyOjdtYGU1U056ey9kLi4mZSg5RSpqR1EhTCI+UU1tVzteOHQ5cnpOakgkUzBEYUVRPjt9';
 

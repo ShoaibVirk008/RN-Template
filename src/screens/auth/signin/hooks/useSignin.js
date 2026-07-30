@@ -1,5 +1,5 @@
 import { navigate } from "../../../../navigation/RootNavigation"
-import { ROUTES } from "../../../../services"
+import { ROUTES } from "../../../../services";
 
 export function useHooks() {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {  APP_ICONS ,APP_SVGS, responsiveWidth} from '../../services';
+import { APP_ICONS, APP_SVGS, responsiveWidth } from '../../utilities';
 import * as Icons  from '../icons/Icons';
 
 export const Primary = ({ size }) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native'
-import { APP_SIZES, useSizes } from '../../services';
+import { APP_SIZES } from '../../utilities';
+import { useSizes } from '../../helper';
 
 const TempSpacer = ({ style, width, height, }) => {
     return (

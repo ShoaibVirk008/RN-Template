@@ -3,7 +3,8 @@ import React from 'react'
 import  Wrapper from '../wrapper/Wrapper'
 import * as Icons  from '../icons/Icons'
 import Text  from '../text/Text'
-import { APP_COLORS, handleAnimation, HelpingMethods, APP_SIZES ,responsiveHeight,responsiveWidth,responsiveFontSize} from '../../services'
+import { APP_COLORS, APP_SIZES, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../utilities';
+import { handleAnimation, HelpingMethods } from '../../helper';
 
 
 export function Primary  ({ value, onPress,tintColor })  {

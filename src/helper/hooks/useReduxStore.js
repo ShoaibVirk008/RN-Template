@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {setSignedInUser} from '../../../store/authSlice';
-import {setIsBottomTabVisible} from '../../../store/appSlice';
+import {setSignedInUser} from '../../store/authSlice';
+import {setIsBottomTabVisible} from '../../store/appSlice';
 
 export default function () {
   //const { signedInUser } = useSelector(state => state?.auth)

@@ -4,7 +4,7 @@ import { APPOINTMENT_STATUSES, ORDER_STATUSES, ROLES_TYPES } from "../data/Data"
 import {throttle} from 'lodash';
 // import { faker } from '@faker-js/faker'
 import { APP_COLORS } from "../../utilities";
-import store from "../../../store";
+import store from "../../store";
 const configureAnimation = () => {
     if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental &&

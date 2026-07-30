@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ImageBackground } from 'react-native'
-import { APP_COLORS, APP_STYLES, APP_SIZES } from '../../services';
+import { APP_COLORS, APP_STYLES, APP_SIZES } from '../../utilities';
 import * as Animatable from 'react-native-animatable'
 import LinearGradient from 'react-native-linear-gradient';
 

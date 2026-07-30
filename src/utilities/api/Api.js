@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { BASE_URL } from '../../constants/Constants';
-import store from '../../../store';
-import { resetAuthState } from '../../../store/authSlice';
+import { BASE_URL } from '../../services/constants/Constants';
+import store from '../../store';
+import { resetAuthState } from '../../store/authSlice';
 
 class Api {
   constructor() {

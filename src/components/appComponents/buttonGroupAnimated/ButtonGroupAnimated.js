@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { StyleSheet } from 'react-native';
 
-import { APP_STYLES, APP_COLORS, APP_SIZES,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../../services';
+import { APP_STYLES, APP_COLORS, APP_SIZES, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../../utilities';
 import * as Icons from '../../icons/Icons';
 import Wrapper from '../../wrapper/Wrapper';
 import Text from '../../text/Text';

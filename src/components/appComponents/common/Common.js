@@ -1,7 +1,7 @@
 import React, { } from 'react';
 import Wrapper from '../../wrapper/Wrapper';
 import Text from '../../text/Text';
-import { APP_SVGS, APP_STYLES, APP_COLORS, responsiveWidth, APP_SIZES,  } from '../../../services';
+import { APP_SVGS, APP_STYLES, APP_COLORS, responsiveWidth, APP_SIZES } from '../../../utilities';
 import * as TextInputs from '../../textInput/TextInput';
 import * as Modals from '../../modals';
 import * as Icons from '../../icons/Icons';

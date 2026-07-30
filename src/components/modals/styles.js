@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { APP_SIZES, APP_COLORS, APP_STYLES } from "../../services";
+import { APP_SIZES, APP_COLORS, APP_STYLES } from "../../utilities";
 
 export const styles = StyleSheet.create({
     professionsCard: {

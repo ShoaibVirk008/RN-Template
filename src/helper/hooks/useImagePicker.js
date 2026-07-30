@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import * as ImagePicker from 'react-native-image-picker';
-import { IMAGE_PICKER_OPTIONS } from '../../constants/Constants';
+import { IMAGE_PICKER_OPTIONS } from '../../services/constants/Constants';
 
 const useImagePicker = () => {
 

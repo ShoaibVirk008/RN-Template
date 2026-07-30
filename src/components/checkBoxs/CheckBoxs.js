@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, } from 'react-native'
-import { APP_COLORS, APP_SIZES, APP_STYLES } from '../../services';
+import { APP_COLORS, APP_SIZES, APP_STYLES } from '../../utilities';
 import * as Icons from '../icons/Icons';
 
 export function Primary  ({

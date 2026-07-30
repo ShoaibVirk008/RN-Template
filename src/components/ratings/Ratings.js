@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Wrapper from '../wrapper/Wrapper'
-import {  APP_COLORS,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
+import { APP_COLORS, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../utilities';
 import { Icon } from '@rneui/base';
 
 export function Primary  ({ value, iconSize, iconStyle, onPressIcon, emptyIconName, fillIconName, emptyIconColor, fillIconColor, iconType, disabled })  {

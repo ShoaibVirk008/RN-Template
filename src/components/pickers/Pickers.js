@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, FlatList, Animated, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
-import { APP_COLORS, APP_FONTS, APP_SIZES, APP_ICONS, APP_STYLES, HelpingMethods,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
+import { APP_COLORS, APP_FONTS, APP_SIZES, APP_ICONS, APP_STYLES, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../utilities';
+import { HelpingMethods } from '../../helper';
 import RNPickerSelect from 'react-native-picker-select'
 import * as Icons from '../icons/Icons';
 import * as TextInputs from '../textInput/TextInput';

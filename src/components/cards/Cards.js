@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from '../wrapper/Wrapper';
 import { Pressable } from 'react-native';
-import { APP_COLORS, responsiveWidth, APP_SIZES } from '../../services';
+import { APP_COLORS, responsiveWidth, APP_SIZES } from '../../utilities';
 import * as Icons from '../icons/Icons';
 import Text from '../text/Text';
 import { Icon } from '@rneui/base';

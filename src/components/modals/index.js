@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes, FlatList, Platform } from 'react-native'
 import { Icon } from '@rneui/base';
-import { APP_COLORS, APP_SIZES, APP_STYLES, useKeyboardStatus,responsiveHeight,responsiveWidth,responsiveFontSize } from '../../services';
+import { APP_COLORS, APP_SIZES, APP_STYLES, responsiveHeight, responsiveWidth, responsiveFontSize } from '../../utilities';
+import { useKeyboardStatus } from '../../helper';
 import Modal from 'react-native-modal'
 import Wrapper from '../wrapper/Wrapper';
 import Text from '../text/Text';

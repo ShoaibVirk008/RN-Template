@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Wrapper, Text, Logos, Icons } from '../../../components';
-import { APP_STYLES, APP_SVGS, responsiveHeight, responsiveWidth } from '../../../services';
+import { APP_STYLES, APP_SVGS, responsiveHeight, responsiveWidth } from '../../../utilities';
 
 function Splash() {
   return (

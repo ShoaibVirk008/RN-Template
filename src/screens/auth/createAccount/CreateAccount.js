@@ -1,7 +1,8 @@
 import React, { Component, useState } from 'react';
 import { View, } from 'react-native';
 import { Logos, Toasts, Icons, Text, TextInputs, Buttons, ScrollViews, Wrapper, Spacer, Headers, CheckBoxes } from '../../../components';
-import { APP_STYLES, APP_COLORS, responsiveFontSize, responsiveHeight, ROUTES, APP_SVGS, responsiveWidth, APP_SIZES } from '../../../services';
+import { APP_STYLES, APP_COLORS, responsiveFontSize, responsiveHeight, APP_SVGS, responsiveWidth, APP_SIZES } from '../../../utilities';
+import { ROUTES } from '../../../services';
 import { useHooks } from './hooks/useCreateAccount';
 export default function Index(props) {
     const { navigate } = props.navigation

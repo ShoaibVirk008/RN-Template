@@ -1,5 +1,5 @@
 import React from 'react'
-import { APP_STYLES, APP_COLORS, APP_SIZES,responsiveHeight,responsiveWidth,responsiveFontSize } from "../../services"
+import { APP_STYLES, APP_COLORS, APP_SIZES, responsiveHeight, responsiveWidth, responsiveFontSize } from "../../utilities";
 
 import * as Buttons from '../buttons/Buttons'
 import Wrapper from '../wrapper/Wrapper'
